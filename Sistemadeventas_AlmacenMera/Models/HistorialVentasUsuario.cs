@@ -2,7 +2,7 @@
 {
     public class HistorialVentasUsuario
     {
-        public int IdHistorialVenta { get; set; }
+        public int IdHistorialVentas { get; set; }
         public int IdVenta { get; set; }
         public string NombreUsuario { get; set; }
         public DateTime FechaVenta { get; set; } = DateTime.Now;
