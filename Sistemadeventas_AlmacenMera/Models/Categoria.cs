@@ -1,11 +1,13 @@
-﻿namespace Sistemadeventas_AlmacenMera.Models
+﻿using System;
+using System.Collections.Generic;
+
+namespace Sistemadeventas_AlmacenMera.Models;
+
+public partial class Categoria
 {
-    public class Categoria
-    {
-        public int IdCategoria { get; set; }
-        public string NombreCategoria { get; set; }
+    public int IdCategoria { get; set; }
 
-        public ICollection<Producto> Productos { get; set; }
-    }
+    public string NombreCategoria { get; set; } = null!;
 
+    public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
 }
