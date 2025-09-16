@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Inicio - Tienda de Abarrotes Mera";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenido a la Tienda de Abarrotes Mera</h1>
+    <p class="lead">Sistema de gestión de ventas e inventario</p>
+    <hr />
+
+    <div class="row mt-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">📦 Productos</h5>
+                    <p class="card-text">Administra el inventario de productos, agrega nuevos artículos y controla su stock.</p>
+                    <a asp-controller="Productoes" asp-action="Index" class="btn btn-primary">Ver Productos</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">👥 Proveedores</h5>
+                    <p class="card-text">Gestiona tus proveedores para mantener un abastecimiento seguro y confiable.</p>
+                    <a asp-controller="Proveedors" asp-action="Index" class="btn btn-success">Ver Proveedores</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">📊 Categorías</h5>
+                    <p class="card-text">Organiza tus productos por categorías y facilita la búsqueda dentro del sistema.</p>
+                    <a asp-controller="Categorias" asp-action="Index" class="btn btn-warning">Ver Categorías</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mt-5">
+        <p class="text-muted">© @DateTime.Now.Year - Sistema de Ventas Abarrotes Mera</p>
+    </div>
+</div>

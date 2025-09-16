@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Sistemadeventas_AlmacenMera.Models.Proveedore>
+
+@{
+    ViewData["Title"] = "Lista de Proveedores";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center mb-4">📦 Proveedores</h1>
+
+    <div class="d-flex justify-content-between mb-3">
+        <p class="text-muted">Aquí puedes administrar todos los proveedores de tu tienda.</p>
+        <a asp-action="Create" class="btn btn-success">➕ Agregar Proveedor</a>
+    </div>
+
+    <table class="table table-striped table-bordered shadow-sm">
+        <thead class="table-dark text-center">
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.NombreProveedor)</th>
+                <th>@Html.DisplayNameFor(model => model.Telefono)</th>
+                <th>@Html.DisplayNameFor(model => model.Email)</th>
+                <th>@Html.DisplayNameFor(model => model.Direccion)</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@Html.DisplayFor(modelItem => item.NombreProveedor)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Telefono)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Email)</td>
+                    <td>@Html.DisplayFor(modelItem => item.Direccion)</td>
+                    <td class="text-center">
+                        <a asp-action="Edit" asp-route-id="@item.IdProveedor" class="btn btn-warning btn-sm">✏️ Editar</a>
+                        <a asp-action="Details" asp-route-id="@item.IdProveedor" class="btn btn-info btn-sm">🔎 Detalles</a>
+                        <a asp-action="Delete" asp-route-id="@item.IdProveedor" class="btn btn-danger btn-sm">🗑️ Eliminar</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,381 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\controllers\\productoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\controllers\\productoescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\controllers\\categoriascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\models\\role.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\viewmodel\\productoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\viewmodel\\productoviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\models\\inventario2context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\models\\inventario2context.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\sistemadeventas_almacenmera.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\usuarios\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\productoes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\productoes\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\categorias\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\categorias\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\proveedor\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\proveedor\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\categorias\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\categorias\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\categorias\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\categorias\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\categorias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\categorias\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\productoes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\productoes\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\productoes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\productoes\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\productoes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\productoes\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\models\\historialprecio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\models\\historialprecio.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\luis\\desktop\\pro\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\models\\historialentradassalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\models\\historialentradassalida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-16T00:07:30.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\appsettings.json",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\appsettings.json",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\appsettings.json",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-15T18:25:03.593Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Program.cs",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Program.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Program.cs",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Program.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAAAB8AAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T17:50:55.552Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Proveedor\\Create.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Proveedor\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Proveedor\\Create.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Proveedor\\Create.cshtml",
+              "ViewState": "AgIAACAAAAAAAAAAAAAIwDoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T17:32:28.01Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Role.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Models\\Role.cs",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Models\\Role.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Models\\Role.cs",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Models\\Role.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T20:26:22.809Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProductoesController.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Controllers\\ProductoesController.cs",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Controllers\\ProductoesController.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Controllers\\ProductoesController.cs",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Controllers\\ProductoesController.cs",
+              "ViewState": "AgIAAJEAAAAAAAAAAAAIwKkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-12T17:11:04.605Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductoViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\ViewModel\\ProductoViewModel.cs",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\ViewModel\\ProductoViewModel.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\ViewModel\\ProductoViewModel.cs",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\ViewModel\\ProductoViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-15T20:22:01.375Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CategoriasController.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Controllers\\CategoriasController.cs",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Controllers\\CategoriasController.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Controllers\\CategoriasController.cs",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Controllers\\CategoriasController.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAAAJwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-07T12:11:15.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Usuarios\\Create.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Usuarios\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Usuarios\\Create.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Usuarios\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T18:25:50.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Inventario2Context.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Models\\Inventario2Context.cs",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Models\\Inventario2Context.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Models\\Inventario2Context.cs",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Models\\Inventario2Context.cs",
+              "ViewState": "AgIAAB8AAAAAAAAAAAA5wCwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T20:26:13.636Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Sistemadeventas_AlmacenMera",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-09-15T20:19:52.249Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Productoes\\Create.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Productoes\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Productoes\\Create.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Productoes\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T18:16:56.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAABEAAAAAAAAAAAAAABsAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T17:28:50.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Create.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Categorias\\Create.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Categorias\\Create.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Categorias\\Create.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Categorias\\Create.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T17:28:03.19Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Categorias\\Index.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Categorias\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Categorias\\Index.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Categorias\\Index.cshtml",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAIwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T17:22:34.144Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Categorias\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Categorias\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Categorias\\Edit.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Categorias\\Edit.cshtml",
+              "ViewState": "AgIAAA0AAAAAAAAAAAAIwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T17:25:13.101Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Categorias\\Details.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Categorias\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Categorias\\Details.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Categorias\\Details.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAIwBsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-15T17:26:13.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Productoes\\Index.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Productoes\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Productoes\\Index.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Productoes\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T11:57:26.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Productoes\\Edit.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Productoes\\Edit.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Productoes\\Edit.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Productoes\\Edit.cshtml",
+              "ViewState": "AgIAAD4AAAAAAAAAAADwv0kAAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T11:58:40.39Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Details.cshtml",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Productoes\\Details.cshtml",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Productoes\\Details.cshtml",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Productoes\\Details.cshtml",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Productoes\\Details.cshtml",
+              "ViewState": "AgIAADgAAAAAAAAAAAAIwFAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-07T11:59:50.443Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "HistorialPrecio.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Models\\HistorialPrecio.cs",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Models\\HistorialPrecio.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Models\\HistorialPrecio.cs",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Models\\HistorialPrecio.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T20:28:03.279Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HistorialEntradasSalida.cs",
+              "DocumentMoniker": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Models\\HistorialEntradasSalida.cs",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Models\\HistorialEntradasSalida.cs",
+              "ToolTip": "C:\\Users\\Luis\\Desktop\\PRO\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Models\\HistorialEntradasSalida.cs",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Models\\HistorialEntradasSalida.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-08T20:27:20.849Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

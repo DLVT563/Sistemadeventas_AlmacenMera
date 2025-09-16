@@ -1,0 +1,33 @@
+﻿@model Sistemadeventas_AlmacenMera.Models.Categoria
+
+@{
+    ViewData["Title"] = "Eliminar Categoría";
+}
+
+<div class="container mt-4">
+    <h1 class="text-center text-danger mb-4">⚠️ Eliminar Categoría</h1>
+
+    <h4 class="text-center">¿Estás seguro de que deseas eliminar esta categoría?</h4>
+    <p class="text-center text-muted">Esta acción no se puede deshacer.</p>
+
+    <div class="card shadow-sm mt-3">
+        <div class="card-body">
+            <dl class="row">
+                <dt class="col-sm-3 fw-bold">
+                    Nombre de la Categoría
+                </dt>
+                <dd class="col-sm-9">
+                    @Html.DisplayFor(model => model.NombreCategoria)
+                </dd>
+            </dl>
+        </div>
+    </div>
+
+    <form asp-action="Delete" class="mt-4">
+        <input type="hidden" asp-for="IdCategoria" />
+        <div class="d-flex justify-content-between">
+            <a asp-action="Index" class="btn btn-secondary">⬅️ Cancelar</a>
+            <input type="submit" value=" Eliminar" class="btn btn-danger" />
+        </div>
+    </form>
+</div>
