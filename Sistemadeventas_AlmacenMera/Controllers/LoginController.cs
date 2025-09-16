@@ -2,16 +2,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
-using Sistemadeventas_AlmacenMera.Models;
+using Sistemadeventas_AlmacenMera.Data;
 using Sistemadeventas_AlmacenMera.ViewModel;
 
 namespace Sistemadeventas_AlmacenMera.Controllers
 {
     public class LoginController : Controller
     {
-        private readonly Inventario2Context _context;
+        private readonly AppDbContext _context;
 
-        public LoginController(Inventario2Context context)
+        public LoginController(AppDbContext context)
         {
             _context = context;
         }
