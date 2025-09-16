@@ -4,6 +4,10 @@
 
 <div class="text-center">
     <h1 class="display-4">Bienvenido a la Tienda de Abarrotes Mera</h1>
+    @if (ViewBag.NombreUsuario != null)
+    {
+        <p class="fs-5 text-secondary">Hola, @ViewBag.NombreUsuario</p>
+    }
     <p class="lead">Sistema de gestión de ventas e inventario</p>
     <hr />
 
