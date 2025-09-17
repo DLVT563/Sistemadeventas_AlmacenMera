@@ -1,13 +1,13 @@
 using System;
 using Microsoft.EntityFrameworkCore;
-using Sistemadeventas_AlmacenMera.Models;
+using Sistemadeventas_AlmacenMera.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.Services.AddDbContext<Inventario2Context>(options =>
+builder.Services.AddDbContext<AppDbContext>(options =>
         options.UseSqlServer(builder.Configuration.GetConnectionString("Inventario2Context")));
 
 builder.Services.AddDistributedMemoryCache();

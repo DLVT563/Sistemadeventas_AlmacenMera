@@ -1,16 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
+using Sistemadeventas_AlmacenMera.Models;
 
-namespace Sistemadeventas_AlmacenMera.Models;
+namespace Sistemadeventas_AlmacenMera.Data;
 
-public partial class Inventario2Context : DbContext
+public partial class AppDbContext : DbContext
 {
-    public Inventario2Context()
-    {
-    }
-
-    public Inventario2Context(DbContextOptions<Inventario2Context> options)
+    public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)
     {
     }
@@ -41,10 +38,7 @@ public partial class Inventario2Context : DbContext
 
     public virtual DbSet<Venta> Ventas { get; set; }
 
-    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
-        => optionsBuilder.UseSqlServer("Server=localhost;Database=Inventario_2;Integrated Security=True;TrustServerCertificate=True;");
-
+    protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder) { }
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<Almacen>(entity =>

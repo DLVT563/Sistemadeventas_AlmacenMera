@@ -5,15 +5,16 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using Sistemadeventas_AlmacenMera.Data;
 using Sistemadeventas_AlmacenMera.Models;
 
 namespace Sistemadeventas_AlmacenMera.Controllers
 {
     public class RolesController : Controller
     {
-        private readonly Inventario2Context _context;
+        private readonly AppDbContext _context;
 
-        public RolesController(Inventario2Context context)
+        public RolesController(AppDbContext context)
         {
             _context = context;
         }
