@@ -1,65 +1,82 @@
 ﻿@model IEnumerable<Sistemadeventas_AlmacenMera.Models.Usuario>
 
-@{
-    ViewData["Title"] = "Index";
+@{ 
+    ViewData["Title"] = "Usuarios";
 }
 
-<h1>Index</h1>
+<div class="container mt-4">
+    <div class="d-flex justify-content-between align-items-center mb-3">
+        <h2 class="fw-bold text-primary">Gestión de Usuarios</h2>
+        <a asp-action="Create" class="btn btn-success">
+            <i class="bi bi-person-plus"></i> Nuevo usuario
+        </a>
+    </div>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Nombre)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Email)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Contraseña)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.FechaCreacion)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Estado)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.IdRolNavigation)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Contraseña)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FechaCreacion)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Estado)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdRolNavigation.IdRol)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.IdUsuario">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.IdUsuario">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.IdUsuario">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+    <div class="card shadow-sm">
+        <div class="card-body p-0">
+            <div class="table-responsive">
+                <table class="table table-hover mb-0 align-middle">
+                    <thead class="table-light">
+                        <tr>
+                            <th>Foto</th>
+                            <th>@Html.DisplayNameFor(model => model.Nombre)</th>
+                            <th>@Html.DisplayNameFor(model => model.Email)</th>
+                            <th>Rol</th>
+                            <th>@Html.DisplayNameFor(model => model.Estado)</th>
+                            <th>@Html.DisplayNameFor(model => model.FechaCreacion)</th>
+                            <th class="text-center">Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @if (Model != null && Model.Any())
+                        {
+                            foreach (var item in Model)
+                            {
+                                var foto = string.IsNullOrEmpty(item.FotoPerfilPath) ? string.Empty : Url.Content($"~/{item.FotoPerfilPath}");
+                                var inicial = string.IsNullOrEmpty(item.Nombre) ? "U" : item.Nombre.Substring(0, 1).ToUpper();
+                                <tr>
+                                    <td>
+                                        @if (!string.IsNullOrEmpty(foto))
+                                        {
+                                            <img src="@foto" alt="Foto de @item.Nombre" class="avatar-nav" />
+                                        }
+                                        else
+                                        {
+                                            <span class="avatar-placeholder">@inicial</span>
+                                        }
+                                    </td>
+                                    <td class="fw-semibold">@item.Nombre</td>
+                                    <td>@item.Email</td>
+                                    <td>@item.IdRolNavigation?.NombreRol</td>
+                                    <td>
+                                        <span class="badge @(string.Equals(item.Estado, "activo", System.StringComparison.OrdinalIgnoreCase) ? "bg-success" : "bg-secondary")">@item.Estado</span>
+                                    </td>
+                                    <td>@item.FechaCreacion?.ToString("dd/MM/yyyy HH:mm")</td>
+                                    <td class="text-center">
+                                        <div class="btn-group btn-group-sm" role="group">
+                                            <a asp-action="Details" asp-route-id="@item.IdUsuario" class="btn btn-outline-info">
+                                                <i class="bi bi-eye"></i>
+                                            </a>
+                                            <a asp-action="Edit" asp-route-id="@item.IdUsuario" class="btn btn-outline-warning">
+                                                <i class="bi bi-pencil"></i>
+                                            </a>
+                                            <a asp-action="Delete" asp-route-id="@item.IdUsuario" class="btn btn-outline-danger">
+                                                <i class="bi bi-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                            }
+                        }
+                        else
+                        {
+                            <tr>
+                                <td colspan="7" class="text-center text-muted py-4">No hay usuarios registrados.</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

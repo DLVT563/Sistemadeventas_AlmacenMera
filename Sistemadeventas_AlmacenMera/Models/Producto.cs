@@ -15,6 +15,10 @@ public partial class Producto
 
     public int Stock { get; set; }
 
+    public string? CodigoBarras { get; set; }
+
+    public string? FotoPath { get; set; }
+
     public int? IdProveedor { get; set; }
 
     public int? IdCategoria { get; set; }

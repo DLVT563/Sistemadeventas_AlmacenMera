@@ -22,6 +22,7 @@ namespace Sistemadeventas_AlmacenMera.Controllers
             }
 
             ViewBag.NombreUsuario = HttpContext.Session.GetString("NombreUsuario");
+            ViewBag.FotoUsuario = HttpContext.Session.GetString("FotoUsuario");
             return View();
         }
 
