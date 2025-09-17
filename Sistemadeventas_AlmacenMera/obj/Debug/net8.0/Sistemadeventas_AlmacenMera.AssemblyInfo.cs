@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Sistemadeventas_AlmacenMera")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+48e5b5f5cacbb4c6bf25082eb56a7a8e9eb2e535")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f646c3f9f2544e20a73f69e2b06bf1b0dd8c7880")]
 [assembly: System.Reflection.AssemblyProductAttribute("Sistemadeventas_AlmacenMera")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Sistemadeventas_AlmacenMera")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -287,6 +287,19 @@ public partial class AppDbContext : DbContext
                 .HasColumnName("nombre_rol");
         });
 
+        modelBuilder.Entity<Role>().HasData(
+    new Role
+    {
+        IdRol = 1,
+        NombreRol = "Admin"
+    },
+    new Role
+    {
+        IdRol = 2,
+        NombreRol = "Vendedor"
+    }
+);
+
         modelBuilder.Entity<Usuario>(entity =>
         {
             entity.HasKey(e => e.IdUsuario).HasName("PK__usuarios__4E3E04AD5D8725D1");
@@ -319,6 +332,29 @@ public partial class AppDbContext : DbContext
                 .HasForeignKey(d => d.IdRol)
                 .HasConstraintName("FK__usuarios__id_rol__3D5E1FD2");
         });
+        modelBuilder.Entity<Usuario>().HasData(
+    new Usuario
+    {
+        IdUsuario = 1,
+        Nombre = "Administrador",
+        Email = "admin@admin.com",
+        Contraseña = "123", 
+        Estado = "activo",
+        FechaCreacion = DateTime.Now,
+        IdRol = 1
+    },
+    new Usuario
+    {
+        IdUsuario = 2,
+        Nombre = "Vendedor",
+        Email = "vende@vende.com",
+        Contraseña = "123",
+        Estado = "activo",
+        FechaCreacion = DateTime.Now,
+        IdRol = 2
+    }
+);
+
 
         modelBuilder.Entity<Venta>(entity =>
         {
