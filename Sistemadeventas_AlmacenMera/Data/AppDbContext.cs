@@ -242,6 +242,12 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.NombreProducto)
                 .HasMaxLength(100)
                 .HasColumnName("nombre_producto");
+            entity.Property(e => e.CodigoBarras)
+                .HasMaxLength(100)
+                .HasColumnName("codigo_barras");
+            entity.Property(e => e.FotoPath)
+                .HasMaxLength(255)
+                .HasColumnName("foto_path");
             entity.Property(e => e.Precio)
                 .HasColumnType("decimal(10, 2)")
                 .HasColumnName("precio");
@@ -327,6 +333,9 @@ public partial class AppDbContext : DbContext
             entity.Property(e => e.Nombre)
                 .HasMaxLength(100)
                 .HasColumnName("nombre");
+            entity.Property(e => e.FotoPerfilPath)
+                .HasMaxLength(255)
+                .HasColumnName("foto_perfil_path");
 
             entity.HasOne(d => d.IdRolNavigation).WithMany(p => p.Usuarios)
                 .HasForeignKey(d => d.IdRol)

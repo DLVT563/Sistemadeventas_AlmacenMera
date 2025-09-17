@@ -49,6 +49,14 @@ namespace Sistemadeventas_AlmacenMera.Controllers
             HttpContext.Session.SetInt32("UsuarioId", usuario.IdUsuario);
             HttpContext.Session.SetString("NombreUsuario", usuario.Nombre);
             HttpContext.Session.SetString("EmailUsuario", usuario.Email);
+            if (!string.IsNullOrEmpty(usuario.FotoPerfilPath))
+            {
+                HttpContext.Session.SetString("FotoUsuario", usuario.FotoPerfilPath);
+            }
+            else
+            {
+                HttpContext.Session.Remove("FotoUsuario");
+            }
 
             if (usuario.IdRol.HasValue)
             {
