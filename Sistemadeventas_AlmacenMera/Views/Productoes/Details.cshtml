@@ -1,11 +1,7 @@
 ﻿@model Sistemadeventas_AlmacenMera.Models.Producto
 
-@{ 
-    ViewData["Title"] = "Detalles del Producto";
-}
-
 @{
-    var fotoProducto = string.IsNullOrEmpty(Model.FotoPath) ? string.Empty : Url.Content($"~/{Model.FotoPath}");
+    ViewData["Title"] = "Detalles del Producto";
 }
 
 <div class="container mt-4">
@@ -44,20 +40,6 @@
                 </dd>
 
                 <dt class="col-sm-3 fw-bold">
-                    Código de barras
-                </dt>
-                <dd class="col-sm-9">
-                    @if (!string.IsNullOrEmpty(Model.CodigoBarras))
-                    {
-                        <span class="badge bg-secondary fs-6">@Model.CodigoBarras</span>
-                    }
-                    else
-                    {
-                        <span class="text-muted">Sin registro</span>
-                    }
-                </dd>
-
-                <dt class="col-sm-3 fw-bold">
                     @Html.DisplayNameFor(model => model.FechaCreacion)
                 </dt>
                 <dd class="col-sm-9">
@@ -83,20 +65,6 @@
                 </dt>
                 <dd class="col-sm-9">
                     @Model.IdProveedorNavigation?.NombreProveedor
-                </dd>
-
-                <dt class="col-sm-3 fw-bold">
-                    Fotografía
-                </dt>
-                <dd class="col-sm-9">
-                    @if (!string.IsNullOrEmpty(fotoProducto))
-                    {
-                        <img src="@fotoProducto" alt="Imagen del producto" class="img-fluid rounded shadow-sm" style="max-height: 260px;" />
-                    }
-                    else
-                    {
-                        <span class="text-muted">Sin imagen asignada</span>
-                    }
                 </dd>
             </dl>
         </div>

@@ -1,9 +1,7 @@
 @using Microsoft.AspNetCore.Http
-@{ 
+@{
     var usuarioId = Context.Session.GetInt32("UsuarioId");
     var nombreUsuario = Context.Session.GetString("NombreUsuario");
-    var fotoUsuario = Context.Session.GetString("FotoUsuario");
-    var inicialUsuario = !string.IsNullOrEmpty(nombreUsuario) ? nombreUsuario.Substring(0, 1).ToUpper() : "U";
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -49,16 +47,8 @@
                     <ul class="navbar-nav">
                         @if (usuarioId.HasValue)
                         {
-                            <li class="nav-item d-flex align-items-center gap-2">
-                                @if (!string.IsNullOrEmpty(fotoUsuario))
-                                {
-                                    <img src="@Url.Content($"~/@fotoUsuario")" alt="Foto de perfil" class="rounded-circle avatar-nav" />
-                                }
-                                else
-                                {
-                                    <span class="avatar-placeholder">@inicialUsuario</span>
-                                }
-                                <span class="nav-link text-dark mb-0">Hola, @nombreUsuario</span>
+                            <li class="nav-item d-flex align-items-center">
+                                <span class="nav-link text-dark">Hola, @nombreUsuario</span>
                             </li>
                             <li class="nav-item">
                                 <form asp-area="" asp-controller="Login" asp-action="Logout" method="post" class="d-inline">

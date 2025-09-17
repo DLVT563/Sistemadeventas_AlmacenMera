@@ -19,8 +19,6 @@ public partial class Usuario
 
     public string? Estado { get; set; }
 
-    public string? FotoPerfilPath { get; set; }
-
     public virtual Role? IdRolNavigation { get; set; }
 
     public virtual ICollection<Venta> Venta { get; set; } = new List<Venta>();

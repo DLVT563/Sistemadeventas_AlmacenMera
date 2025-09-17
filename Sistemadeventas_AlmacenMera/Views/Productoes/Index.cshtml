@@ -19,12 +19,10 @@
                 <th>@Html.DisplayNameFor(model => model.Descripcion)</th>
                 <th>@Html.DisplayNameFor(model => model.Precio)</th>
                 <th>@Html.DisplayNameFor(model => model.Stock)</th>
-                <th>Código de Barras</th>
                 <th>@Html.DisplayNameFor(model => model.FechaCreacion)</th>
                 <th>@Html.DisplayNameFor(model => model.FechaVencimiento)</th>
                 <th>Categoría</th>
                 <th>Proveedor</th>
-                <th>Imagen</th>
                 <th class="text-center">Acciones</th>
             </tr>
         </thead>
@@ -38,30 +36,10 @@
                         <td>@Html.DisplayFor(modelItem => item.Descripcion)</td>
                         <td>@string.Format("{0:C}", item.Precio)</td>
                         <td>@Html.DisplayFor(modelItem => item.Stock)</td>
-                        <td>
-                            @if (!string.IsNullOrEmpty(item.CodigoBarras))
-                            {
-                                <span class="badge bg-light text-dark border">@item.CodigoBarras</span>
-                            }
-                            else
-                            {
-                                <span class="text-muted">N/A</span>
-                            }
-                        </td>
                         <td>@item.FechaCreacion?.ToString("dd/MM/yyyy")</td>
                         <td>@item.FechaVencimiento?.ToString("dd/MM/yyyy")</td>
                         <td>@item.IdCategoriaNavigation?.NombreCategoria</td>
                         <td>@item.IdProveedorNavigation?.NombreProveedor</td>
-                        <td>
-                            @if (!string.IsNullOrEmpty(item.FotoPath))
-                            {
-                                <img src="@Url.Content($"~/{item.FotoPath}")" alt="Imagen del producto" class="img-thumbnail" style="max-height: 70px;" />
-                            }
-                            else
-                            {
-                                <span class="text-muted">Sin imagen</span>
-                            }
-                        </td>
                         <td class="text-center">
                             <a asp-action="Edit" asp-route-id="@item.IdProducto" class="btn btn-warning btn-sm me-1">
                                 <i class="bi bi-pencil-square"></i> Editar
