@@ -20,3 +20,53 @@ html {
 body {
   margin-bottom: 60px;
 }
+
+.avatar-nav {
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border: 2px solid rgba(13, 110, 253, 0.2);
+}
+
+.avatar-placeholder {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d6efd, #4dabf7);
+  color: #fff;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.profile-avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid rgba(13, 110, 253, 0.25);
+  box-shadow: 0 10px 25px rgba(13, 110, 253, 0.15);
+}
+
+.profile-avatar-placeholder {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+  font-weight: 600;
+  color: #fff;
+  background: linear-gradient(135deg, #6f42c1, #ab47bc);
+  box-shadow: 0 10px 25px rgba(171, 71, 188, 0.25);
+}
+
+.scanner-viewport {
+  width: 100%;
+  min-height: 240px;
+  background-color: #000;
+  position: relative;
+}

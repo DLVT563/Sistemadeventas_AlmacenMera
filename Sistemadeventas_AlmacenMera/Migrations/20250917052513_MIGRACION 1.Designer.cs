@@ -321,6 +321,16 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("descripcion");
 
+                    b.Property<string>("CodigoBarras")
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)")
+                        .HasColumnName("codigo_barras");
+
+                    b.Property<string>("FotoPath")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("foto_path");
+
                     b.Property<DateTime?>("FechaCreacion")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("datetime")
@@ -446,6 +456,11 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                         .HasColumnType("nvarchar(10)")
                         .HasDefaultValue("activo")
                         .HasColumnName("estado");
+
+                    b.Property<string>("FotoPerfilPath")
+                        .HasMaxLength(255)
+                        .HasColumnType("nvarchar(255)")
+                        .HasColumnName("foto_perfil_path");
 
                     b.Property<DateTime?>("FechaCreacion")
                         .ValueGeneratedOnAdd()

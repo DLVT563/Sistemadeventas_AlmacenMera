@@ -8,6 +8,21 @@
     {
         <p class="fs-5 text-secondary">Hola, @ViewBag.NombreUsuario</p>
     }
+    <div class="d-flex justify-content-center mb-4">
+        @if (!string.IsNullOrEmpty(ViewBag.FotoUsuario))
+        {
+            <img src="@Url.Content($"~/{ViewBag.FotoUsuario}")" alt="Foto del usuario" class="profile-avatar" />
+        }
+        else if (ViewBag.NombreUsuario != null)
+        {
+            var inicial = ViewBag.NombreUsuario.ToString().Substring(0, 1).ToUpper();
+            <div class="profile-avatar-placeholder">@inicial</div>
+        }
+        else
+        {
+            <div class="profile-avatar-placeholder">U</div>
+        }
+    </div>
     <p class="lead">Sistema de gestión de ventas e inventario</p>
     <hr />
 
@@ -27,7 +42,7 @@
                 <div class="card-body">
                     <h5 class="card-title">👥 Proveedores</h5>
                     <p class="card-text">Gestiona tus proveedores para mantener un abastecimiento seguro y confiable.</p>
-                    <a asp-controller="Proveedors" asp-action="Index" class="btn btn-success">Ver Proveedores</a>
+                    <a asp-controller="Proveedor" asp-action="Index" class="btn btn-success">Ver Proveedores</a>
                 </div>
             </div>
         </div>
