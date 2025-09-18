@@ -469,6 +469,7 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                         .IsUnique();
 
                     b.ToTable("usuarios", (string)null);
+
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Venta", b =>
