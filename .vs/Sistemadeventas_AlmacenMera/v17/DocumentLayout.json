@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\angel\\desktop\\mera\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\angel\\desktop\\mera\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|c:\\users\\angel\\desktop\\mera\\sistemadeventas_almacenmera\\sistemadeventas_almacenmera\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{43DDCB1F-C672-4084-8529-E3B1D5233C23}|Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj|solutionrelative:sistemadeventas_almacenmera\\migrations\\appdbcontextmodelsnapshot.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,42 +14,33 @@
       "DocumentGroups": [
         {
           "DockedWidth": 1177,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
             },
             {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACsAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-17T05:38:01.519Z",
-              "EditorCaption": ""
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Data\\AppDbContext.cs",
-              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Data\\AppDbContext.cs",
-              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Data\\AppDbContext.cs",
-              "ViewState": "AgIAAEABAAAAAAAAAAAAwCwBAAACAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "AppDbContextModelSnapshot.cs",
+              "DocumentMoniker": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeDocumentMoniker": "Sistemadeventas_AlmacenMera\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ToolTip": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Migrations\\AppDbContextModelSnapshot.cs",
+              "RelativeToolTip": "Sistemadeventas_AlmacenMera\\Migrations\\AppDbContextModelSnapshot.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJ8BAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-17T05:34:49.073Z",
+              "WhenOpened": "2025-09-17T12:50:47.33Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 1324,
+          "DockedWidth": 505,
           "SelectedChildIndex": -1,
           "Children": [
             {

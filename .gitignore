@@ -48,7 +48,14 @@ out/
 Thumbs.db
 
 # =========================================
-# Migraciones EF Core (opcional)
-# Quita esta línea si quieres subirlas al repo
+# Migraciones EF Core
+# =========================================
 
- Migrations/
+Migrations/
+
+# =========================================
+# Cambios e actualizacion :p
+# =========================================
+
+Add-Migrations = Null;
+node_modules = Null;
