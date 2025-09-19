@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class Role
+public class Roles
 {
     public int IdRol { get; set; }
 

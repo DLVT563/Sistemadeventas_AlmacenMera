@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class HistorialVentasUsuario
+public class HistorialVentasUsuario
 {
     public int IdHistorialVenta { get; set; }
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class Proveedore
+public class Proveedores
 {
     public int IdProveedor { get; set; }
 
@@ -15,5 +15,5 @@ public partial class Proveedore
 
     public string? Direccion { get; set; }
 
-    public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
+    public virtual ICollection<Productos> Productos { get; set; } = new List<Productos>();
 }

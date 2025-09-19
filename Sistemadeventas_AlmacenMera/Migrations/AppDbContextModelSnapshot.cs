@@ -26,518 +26,445 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                 {
                     b.Property<int>("IdAlmacen")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_almacen");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdAlmacen"));
 
                     b.Property<int>("Cantidad")
-                        .HasColumnType("int")
-                        .HasColumnName("cantidad");
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("FechaEntrada")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_entrada")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int?>("IdProducto")
-                        .HasColumnType("int")
-                        .HasColumnName("id_producto");
+                        .HasColumnType("int");
 
-                    b.HasKey("IdAlmacen")
-                        .HasName("PK__almacen__098D5D13B1E3EE71");
+                    b.HasKey("IdAlmacen");
 
                     b.HasIndex("IdProducto");
 
-                    b.ToTable("almacen", (string)null);
+                    b.ToTable("Almacenes");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Categoria", b =>
                 {
                     b.Property<int>("IdCategoria")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_categoria");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdCategoria"));
 
                     b.Property<string>("NombreCategoria")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("nombre_categoria");
+                        .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("IdCategoria")
-                        .HasName("PK__categori__CD54BC5A783E9B06");
+                    b.HasKey("IdCategoria");
 
-                    b.ToTable("categorias", (string)null);
+                    b.HasIndex("NombreCategoria");
+
+                    b.ToTable("Categorias");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.DetalleVenta", b =>
                 {
                     b.Property<int>("IdDetalle")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_detalle");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdDetalle"));
 
                     b.Property<int>("Cantidad")
-                        .HasColumnType("int")
-                        .HasColumnName("cantidad");
+                        .HasColumnType("int");
 
                     b.Property<int?>("IdProducto")
-                        .HasColumnType("int")
-                        .HasColumnName("id_producto");
+                        .HasColumnType("int");
 
                     b.Property<int?>("IdVenta")
-                        .HasColumnType("int")
-                        .HasColumnName("id_venta");
+                        .HasColumnType("int");
 
                     b.Property<decimal>("PrecioUnitario")
-                        .HasColumnType("decimal(10, 2)")
-                        .HasColumnName("precio_unitario");
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("IdDetalle")
-                        .HasName("PK__detalle___4F1332DED72C0490");
+                    b.HasKey("IdDetalle");
 
                     b.HasIndex("IdProducto");
 
                     b.HasIndex("IdVenta");
 
-                    b.ToTable("detalle_ventas", (string)null);
+                    b.ToTable("DetalleVentas");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Fiado", b =>
                 {
                     b.Property<int>("IdFiado")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_fiado");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdFiado"));
 
                     b.Property<string>("Estado")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
-                        .HasDefaultValue("activo")
-                        .HasColumnName("estado");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Pendiente");
 
                     b.Property<DateTime?>("FechaInicio")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_inicio")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<DateTime?>("FechaVencimiento")
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_vencimiento");
+                        .HasColumnType("datetime2");
 
                     b.Property<int?>("IdVenta")
-                        .HasColumnType("int")
-                        .HasColumnName("id_venta");
+                        .HasColumnType("int");
 
                     b.Property<decimal?>("MontoPagado")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("decimal(10, 2)")
-                        .HasDefaultValue(0.00m)
-                        .HasColumnName("monto_pagado");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("MontoTotal")
-                        .HasColumnType("decimal(10, 2)")
-                        .HasColumnName("monto_total");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<decimal>("SaldoPendiente")
-                        .HasColumnType("decimal(10, 2)")
-                        .HasColumnName("saldo_pendiente");
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("IdFiado")
-                        .HasName("PK__fiados__420FD58DC3369324");
+                    b.HasKey("IdFiado");
 
                     b.HasIndex("IdVenta");
 
-                    b.ToTable("fiados", (string)null);
+                    b.ToTable("Fiados");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.HistorialEntradasSalida", b =>
                 {
                     b.Property<int>("IdHistorial")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_historial");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdHistorial"));
 
                     b.Property<int>("Cantidad")
-                        .HasColumnType("int")
-                        .HasColumnName("cantidad");
+                        .HasColumnType("int");
 
                     b.Property<DateTime?>("FechaMovimiento")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_movimiento")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int?>("IdProducto")
-                        .HasColumnType("int")
-                        .HasColumnName("id_producto");
+                        .HasColumnType("int");
 
                     b.Property<string>("Observaciones")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("observaciones");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("TipoMovimiento")
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
-                        .HasColumnName("tipo_movimiento");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("IdHistorial")
-                        .HasName("PK__historia__76E6C5028A10B7E2");
+                    b.HasKey("IdHistorial");
 
                     b.HasIndex("IdProducto");
 
-                    b.ToTable("historial_entradas_salidas", (string)null);
+                    b.ToTable("HistorialEntradasSalidas");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.HistorialPrecio", b =>
                 {
                     b.Property<int>("IdPrecio")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_precio");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPrecio"));
 
                     b.Property<DateTime?>("FechaCambio")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_cambio")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int?>("IdProducto")
-                        .HasColumnType("int")
-                        .HasColumnName("id_producto");
+                        .HasColumnType("int");
 
                     b.Property<decimal>("Precio")
-                        .HasColumnType("decimal(10, 2)")
-                        .HasColumnName("precio");
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("IdPrecio")
-                        .HasName("PK__historia__A70EF6EDD3220AF5");
+                    b.HasKey("IdPrecio");
 
                     b.HasIndex("IdProducto");
 
-                    b.ToTable("historial_precios", (string)null);
+                    b.ToTable("HistorialPrecios");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.HistorialVentasUsuario", b =>
                 {
                     b.Property<int>("IdHistorialVenta")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_historial_venta");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdHistorialVenta"));
 
                     b.Property<DateTime?>("FechaVenta")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_venta")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int?>("IdVenta")
-                        .HasColumnType("int")
-                        .HasColumnName("id_venta");
+                        .HasColumnType("int");
 
                     b.Property<string>("NombreUsuario")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("nombre_usuario");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("TotalVenta")
-                        .HasColumnType("decimal(10, 2)")
-                        .HasColumnName("total_venta");
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("IdHistorialVenta")
-                        .HasName("PK__historia__B96FB70281153004");
+                    b.HasKey("IdHistorialVenta");
 
                     b.HasIndex("IdVenta");
 
-                    b.ToTable("historial_ventas_usuario", (string)null);
+                    b.ToTable("HistorialVentasUsuarios");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.PagosFiado", b =>
                 {
                     b.Property<int>("IdPagoFiado")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_pago_fiado");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdPagoFiado"));
 
                     b.Property<DateTime?>("FechaPago")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_pago")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int?>("IdFiado")
-                        .HasColumnType("int")
-                        .HasColumnName("id_fiado");
+                        .HasColumnType("int");
 
                     b.Property<string>("MetodoPago")
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("metodo_pago");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<decimal>("MontoPago")
-                        .HasColumnType("decimal(10, 2)")
-                        .HasColumnName("monto_pago");
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("IdPagoFiado")
-                        .HasName("PK__pagos_fi__CDDE6AE73CCAB987");
+                    b.HasKey("IdPagoFiado");
 
                     b.HasIndex("IdFiado");
 
-                    b.ToTable("pagos_fiados", (string)null);
+                    b.ToTable("PagosFiados");
                 });
 
-            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Producto", b =>
+            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Productos", b =>
                 {
                     b.Property<int>("IdProducto")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_producto");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdProducto"));
 
+                    b.Property<string>("CodigoBarras")
+                        .HasColumnType("nvarchar(450)");
+
                     b.Property<string>("Descripcion")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("descripcion");
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)");
 
                     b.Property<DateTime?>("FechaCreacion")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_creacion")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<DateTime?>("FechaVencimiento")
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_vencimiento");
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FotoPath")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("IdCategoria")
-                        .HasColumnType("int")
-                        .HasColumnName("id_categoria");
+                        .HasColumnType("int");
 
                     b.Property<int?>("IdProveedor")
-                        .HasColumnType("int")
-                        .HasColumnName("id_proveedor");
+                        .HasColumnType("int");
 
                     b.Property<string>("NombreProducto")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("nombre_producto");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<decimal>("Precio")
-                        .HasColumnType("decimal(10, 2)")
-                        .HasColumnName("precio");
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<int>("Stock")
-                        .HasColumnType("int")
-                        .HasColumnName("stock");
+                        .HasColumnType("int");
 
-                    b.HasKey("IdProducto")
-                        .HasName("PK__producto__FF341C0D2E6180F9");
+                    b.HasKey("IdProducto");
+
+                    b.HasIndex("CodigoBarras")
+                        .IsUnique()
+                        .HasFilter("[CodigoBarras] IS NOT NULL");
 
                     b.HasIndex("IdCategoria");
 
                     b.HasIndex("IdProveedor");
 
-                    b.ToTable("productos", (string)null);
+                    b.HasIndex("NombreProducto");
+
+                    b.ToTable("Productos");
                 });
 
-            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Proveedore", b =>
+            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Proveedores", b =>
                 {
                     b.Property<int>("IdProveedor")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_proveedor");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdProveedor"));
 
                     b.Property<string>("Direccion")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("direccion");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Email")
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("email");
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("NombreProveedor")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("nombre_proveedor");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Telefono")
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasColumnName("telefono");
+                        .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("IdProveedor")
-                        .HasName("PK__proveedo__8D3DFE28D6467724");
+                    b.HasKey("IdProveedor");
 
-                    b.ToTable("proveedores", (string)null);
+                    b.HasIndex("NombreProveedor");
+
+                    b.ToTable("Proveedores");
                 });
 
-            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Role", b =>
+            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Roles", b =>
                 {
                     b.Property<int>("IdRol")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_rol");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdRol"));
 
                     b.Property<string>("NombreRol")
                         .IsRequired()
-                        .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)")
-                        .HasColumnName("nombre_rol");
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("IdRol")
-                        .HasName("PK__roles__6ABCB5E03EFACA1E");
+                    b.HasKey("IdRol");
 
-                    b.ToTable("roles", (string)null);
+                    b.ToTable("Roles");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Usuario", b =>
                 {
                     b.Property<int>("IdUsuario")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_usuario");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdUsuario"));
 
                     b.Property<string>("Contraseña")
                         .IsRequired()
-                        .HasMaxLength(255)
-                        .HasColumnType("nvarchar(255)")
-                        .HasColumnName("contraseña");
+                        .HasMaxLength(200)
+                        .HasColumnType("nvarchar(200)");
 
                     b.Property<string>("Email")
                         .IsRequired()
-                        .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("email");
+                        .HasMaxLength(150)
+                        .HasColumnType("nvarchar(150)");
 
                     b.Property<string>("Estado")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
-                        .HasDefaultValue("activo")
-                        .HasColumnName("estado");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Activo");
 
                     b.Property<DateTime?>("FechaCreacion")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_creacion")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("FotoPerfilPath")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<int?>("IdRol")
-                        .HasColumnType("int")
-                        .HasColumnName("id_rol");
+                        .HasColumnType("int");
 
                     b.Property<string>("Nombre")
                         .IsRequired()
                         .HasMaxLength(100)
-                        .HasColumnType("nvarchar(100)")
-                        .HasColumnName("nombre");
+                        .HasColumnType("nvarchar(100)");
 
-                    b.HasKey("IdUsuario")
-                        .HasName("PK__usuarios__4E3E04AD5D8725D1");
+                    b.HasKey("IdUsuario");
+
+                    b.HasIndex("Email")
+                        .IsUnique();
 
                     b.HasIndex("IdRol");
 
-                    b.HasIndex(new[] { "Email" }, "UQ__usuarios__AB6E6164A612CDC6")
-                        .IsUnique();
-
-                    b.ToTable("usuarios", (string)null);
-
+                    b.ToTable("Usuarios");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Venta", b =>
                 {
                     b.Property<int>("IdVenta")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasColumnName("id_venta");
+                        .HasColumnType("int");
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("IdVenta"));
 
                     b.Property<string>("Estado")
                         .ValueGeneratedOnAdd()
-                        .HasMaxLength(10)
-                        .HasColumnType("nvarchar(10)")
-                        .HasDefaultValue("pendiente")
-                        .HasColumnName("estado");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasDefaultValue("Pendiente");
 
                     b.Property<DateTime?>("FechaVenta")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("datetime")
-                        .HasColumnName("fecha_venta")
-                        .HasDefaultValueSql("(getdate())");
+                        .HasColumnType("datetime2")
+                        .HasDefaultValueSql("GETDATE()");
 
                     b.Property<int?>("IdUsuario")
-                        .HasColumnType("int")
-                        .HasColumnName("id_usuario");
+                        .HasColumnType("int");
 
                     b.Property<string>("TipoVenta")
-                        .ValueGeneratedOnAdd()
-                        .HasMaxLength(20)
-                        .HasColumnType("nvarchar(20)")
-                        .HasDefaultValue("contado")
-                        .HasColumnName("tipo_venta");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.Property<decimal>("Total")
-                        .HasColumnType("decimal(10, 2)")
-                        .HasColumnName("total");
+                        .HasColumnType("decimal(18,2)");
 
-                    b.HasKey("IdVenta")
-                        .HasName("PK__ventas__459533BF50DF49F8");
+                    b.HasKey("IdVenta");
 
                     b.HasIndex("IdUsuario");
 
-                    b.ToTable("ventas", (string)null);
+                    b.ToTable("Ventas");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Almacen", b =>
                 {
-                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Producto", "IdProductoNavigation")
+                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Productos", "IdProductoNavigation")
                         .WithMany("Almacens")
                         .HasForeignKey("IdProducto")
-                        .HasConstraintName("FK__almacen__id_prod__49C3F6B7");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("IdProductoNavigation");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.DetalleVenta", b =>
                 {
-                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Producto", "IdProductoNavigation")
+                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Productos", "IdProductoNavigation")
                         .WithMany("DetalleVenta")
                         .HasForeignKey("IdProducto")
-                        .HasConstraintName("FK__detalle_v__id_pr__5535A963");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Sistemadeventas_AlmacenMera.Models.Venta", "IdVentaNavigation")
                         .WithMany("DetalleVenta")
                         .HasForeignKey("IdVenta")
-                        .HasConstraintName("FK__detalle_v__id_ve__5441852A");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("IdProductoNavigation");
 
@@ -549,27 +476,27 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                     b.HasOne("Sistemadeventas_AlmacenMera.Models.Venta", "IdVentaNavigation")
                         .WithMany("Fiados")
                         .HasForeignKey("IdVenta")
-                        .HasConstraintName("FK__fiados__id_venta__5FB337D6");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("IdVentaNavigation");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.HistorialEntradasSalida", b =>
                 {
-                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Producto", "IdProductoNavigation")
+                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Productos", "IdProductoNavigation")
                         .WithMany("HistorialEntradasSalida")
                         .HasForeignKey("IdProducto")
-                        .HasConstraintName("FK__historial__id_pr__68487DD7");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("IdProductoNavigation");
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.HistorialPrecio", b =>
                 {
-                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Producto", "IdProductoNavigation")
+                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Productos", "IdProductoNavigation")
                         .WithMany("HistorialPrecios")
                         .HasForeignKey("IdProducto")
-                        .HasConstraintName("FK__historial__id_pr__59063A47");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("IdProductoNavigation");
                 });
@@ -579,7 +506,7 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                     b.HasOne("Sistemadeventas_AlmacenMera.Models.Venta", "IdVentaNavigation")
                         .WithMany("HistorialVentasUsuarios")
                         .HasForeignKey("IdVenta")
-                        .HasConstraintName("FK__historial__id_ve__6C190EBB");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("IdVentaNavigation");
                 });
@@ -589,22 +516,22 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                     b.HasOne("Sistemadeventas_AlmacenMera.Models.Fiado", "IdFiadoNavigation")
                         .WithMany("PagosFiados")
                         .HasForeignKey("IdFiado")
-                        .HasConstraintName("FK__pagos_fia__id_fi__6383C8BA");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("IdFiadoNavigation");
                 });
 
-            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Producto", b =>
+            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Productos", b =>
                 {
                     b.HasOne("Sistemadeventas_AlmacenMera.Models.Categoria", "IdCategoriaNavigation")
                         .WithMany("Productos")
                         .HasForeignKey("IdCategoria")
-                        .HasConstraintName("FK__productos__id_ca__45F365D3");
+                        .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Proveedore", "IdProveedorNavigation")
+                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Proveedores", "IdProveedorNavigation")
                         .WithMany("Productos")
                         .HasForeignKey("IdProveedor")
-                        .HasConstraintName("FK__productos__id_pr__44FF419A");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("IdCategoriaNavigation");
 
@@ -613,10 +540,10 @@ namespace Sistemadeventas_AlmacenMera.Migrations
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Usuario", b =>
                 {
-                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Role", "IdRolNavigation")
+                    b.HasOne("Sistemadeventas_AlmacenMera.Models.Roles", "IdRolNavigation")
                         .WithMany("Usuarios")
                         .HasForeignKey("IdRol")
-                        .HasConstraintName("FK__usuarios__id_rol__3D5E1FD2");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("IdRolNavigation");
                 });
@@ -626,7 +553,7 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                     b.HasOne("Sistemadeventas_AlmacenMera.Models.Usuario", "IdUsuarioNavigation")
                         .WithMany("Venta")
                         .HasForeignKey("IdUsuario")
-                        .HasConstraintName("FK__ventas__id_usuar__5165187F");
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("IdUsuarioNavigation");
                 });
@@ -641,7 +568,7 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                     b.Navigation("PagosFiados");
                 });
 
-            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Producto", b =>
+            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Productos", b =>
                 {
                     b.Navigation("Almacens");
 
@@ -652,12 +579,12 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                     b.Navigation("HistorialPrecios");
                 });
 
-            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Proveedore", b =>
+            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Proveedores", b =>
                 {
                     b.Navigation("Productos");
                 });
 
-            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Role", b =>
+            modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Roles", b =>
                 {
                     b.Navigation("Usuarios");
                 });

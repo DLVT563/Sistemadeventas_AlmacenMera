@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class Almacen
+public class Almacen
 {
     public int IdAlmacen { get; set; }
 
@@ -13,5 +13,5 @@ public partial class Almacen
 
     public DateTime? FechaEntrada { get; set; }
 
-    public virtual Producto? IdProductoNavigation { get; set; }
+    public virtual Productos? IdProductoNavigation { get; set; }
 }

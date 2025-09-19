@@ -28,26 +28,6 @@ build_property._RazorSourceGeneratorDebug =
 build_property.EffectiveAnalysisLevelStyle = 8.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Categorias/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Categorias/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Categorias/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Categorias/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Categorias/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcmlhc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -56,72 +36,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cTG9naW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Productoes/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xDcmVhdGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Productoes/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xEZWxldGUuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Productoes/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xEZXRhaWxzLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Productoes/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xFZGl0LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Productoes/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHVjdG9lc1xJbmRleC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Proveedor/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Proveedor/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Proveedor/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Proveedor/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Proveedor/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvdmVlZG9yXEluZGV4LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Usuarios/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Usuarios/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Usuarios/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Usuarios/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/Usuarios/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXN1YXJpb3NcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Angel/Desktop/MERA/Sistemadeventas_AlmacenMera/Sistemadeventas_AlmacenMera/Views/_ViewImports.cshtml]

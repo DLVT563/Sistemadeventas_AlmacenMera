@@ -3,11 +3,11 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class Categoria
+public class Categoria
 {
     public int IdCategoria { get; set; }
 
     public string NombreCategoria { get; set; } = null!;
 
-    public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
+    public virtual ICollection<Productos> Productos { get; set; } = new List<Productos>();
 }

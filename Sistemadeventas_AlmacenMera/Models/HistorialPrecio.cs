@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class HistorialPrecio
+public class HistorialPrecio
 {
     public int IdPrecio { get; set; }
 
@@ -13,5 +13,5 @@ public partial class HistorialPrecio
 
     public DateTime? FechaCambio { get; set; }
 
-    public virtual Producto? IdProductoNavigation { get; set; }
+    public virtual Productos? IdProductoNavigation { get; set; }
 }
