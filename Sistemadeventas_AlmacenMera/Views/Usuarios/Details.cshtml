@@ -1,61 +1,60 @@
 ﻿@model Sistemadeventas_AlmacenMera.Models.Usuario
 
-@{ 
-    ViewData["Title"] = "Detalle de usuario";
-    var foto = string.IsNullOrEmpty(Model?.FotoPerfilPath) ? string.Empty : Url.Content($"~/{Model.FotoPerfilPath}");
-    var inicial = string.IsNullOrEmpty(Model?.Nombre) ? "U" : Model.Nombre.Substring(0, 1).ToUpper();
+@{
+    ViewData["Title"] = "Details";
 }
 
-<div class="container mt-4">
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
-            <div class="card shadow-sm">
-                <div class="card-header bg-info text-white">
-                    <h4 class="mb-0">@Model.Nombre</h4>
-                </div>
-                <div class="card-body">
-                    <div class="row g-4 align-items-center">
-                        <div class="col-md-4 text-center">
-                            @if (!string.IsNullOrEmpty(foto))
-                            {
-                                <img src="@foto" alt="Foto de @Model.Nombre" class="profile-avatar" />
-                            }
-                            else
-                            {
-                                <div class="profile-avatar-placeholder">@inicial</div>
-                            }
-                        </div>
-                        <div class="col-md-8">
-                            <dl class="row mb-0">
-                                <dt class="col-sm-4">Correo electrónico</dt>
-                                <dd class="col-sm-8">@Model.Email</dd>
+<h1>Details</h1>
 
-                                <dt class="col-sm-4">Rol</dt>
-                                <dd class="col-sm-8">@Model.IdRolNavigation?.NombreRol</dd>
-
-                                <dt class="col-sm-4">Estado</dt>
-                                <dd class="col-sm-8">
-                                    <span class="badge @(string.Equals(Model.Estado, "activo", System.StringComparison.OrdinalIgnoreCase) ? "bg-success" : "bg-secondary")">@Model.Estado</span>
-                                </dd>
-
-                                <dt class="col-sm-4">Registrado el</dt>
-                                <dd class="col-sm-8">@Model.FechaCreacion?.ToString("dd/MM/yyyy HH:mm")</dd>
-
-                                <dt class="col-sm-4">Contraseña</dt>
-                                <dd class="col-sm-8">@Model.Contraseña</dd>
-                            </dl>
-                        </div>
-                    </div>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <a asp-action="Index" class="btn btn-outline-secondary">
-                        <i class="bi bi-arrow-left-circle"></i> Volver al listado
-                    </a>
-                    <a asp-action="Edit" asp-route-id="@Model?.IdUsuario" class="btn btn-info text-white">
-                        <i class="bi bi-pencil"></i> Editar usuario
-                    </a>
-                </div>
-            </div>
-        </div>
-    </div>
+<div>
+    <h4>Usuario</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Nombre)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nombre)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Contraseña)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Contraseña)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FechaCreacion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FechaCreacion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Estado)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Estado)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FotoPerfilPath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FotoPerfilPath)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.IdRolNavigation)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.IdRolNavigation.NombreRol)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdUsuario">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>

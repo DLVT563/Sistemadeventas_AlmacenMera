@@ -42,10 +42,16 @@
             @Html.DisplayFor(model => model.Estado)
         </dd>
         <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FotoPerfilPath)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FotoPerfilPath)
+        </dd>
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.IdRolNavigation)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.IdRolNavigation.IdRol)
+            @Html.DisplayFor(model => model.IdRolNavigation.NombreRol)
         </dd>
     </dl>
     

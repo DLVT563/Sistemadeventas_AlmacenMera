@@ -1,27 +1,24 @@
 ﻿@model Sistemadeventas_AlmacenMera.Models.Categoria
 
 @{
-    ViewData["Title"] = "Detalles de Categoría";
+    ViewData["Title"] = "Details";
 }
 
-<div class="container mt-4">
-    <h1 class="text-center mb-4">📂 Detalles de la Categoría</h1>
+<h1>Details</h1>
 
-    <div class="card shadow-sm">
-        <div class="card-body">
-            <dl class="row">
-                <dt class="col-sm-3 fw-bold">
-                    Nombre de la Categoría
-                </dt>
-                <dd class="col-sm-9">
-                    @Html.DisplayFor(model => model.NombreCategoria)
-                </dd>
-            </dl>
-        </div>
-    </div>
-
-    <div class="mt-4 d-flex justify-content-between">
-        <a asp-action="Index" class="btn btn-secondary">⬅️ Volver a la lista</a>
-        <a asp-action="Edit" asp-route-id="@Model?.IdCategoria" class="btn btn-warning">✏️ Editar</a>
-    </div>
+<div>
+    <h4>Categoria</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.NombreCategoria)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.NombreCategoria)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.IdCategoria">Edit</a> |
+    <a asp-action="Index">Back to List</a>
 </div>

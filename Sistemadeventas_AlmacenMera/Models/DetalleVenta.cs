@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class DetalleVenta
+public class DetalleVenta
 {
     public int IdDetalle { get; set; }
 
@@ -15,7 +15,7 @@ public partial class DetalleVenta
 
     public decimal PrecioUnitario { get; set; }
 
-    public virtual Producto? IdProductoNavigation { get; set; }
+    public virtual Productos? IdProductoNavigation { get; set; }
 
     public virtual Venta? IdVentaNavigation { get; set; }
 }

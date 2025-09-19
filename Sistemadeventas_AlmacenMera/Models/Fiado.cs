@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class Fiado
+public class Fiado
 {
     public int IdFiado { get; set; }
 

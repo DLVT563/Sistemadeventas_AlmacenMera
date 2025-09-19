@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class HistorialEntradasSalida
+public class HistorialEntradasSalida
 {
     public int IdHistorial { get; set; }
 
@@ -17,5 +17,5 @@ public partial class HistorialEntradasSalida
 
     public string? Observaciones { get; set; }
 
-    public virtual Producto? IdProductoNavigation { get; set; }
+    public virtual Productos? IdProductoNavigation { get; set; }
 }

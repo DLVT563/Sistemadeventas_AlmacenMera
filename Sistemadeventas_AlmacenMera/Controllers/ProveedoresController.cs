@@ -10,22 +10,22 @@ using Sistemadeventas_AlmacenMera.Models;
 
 namespace Sistemadeventas_AlmacenMera.Controllers
 {
-    public class ProveedorController : Controller
+    public class ProveedoresController : Controller
     {
         private readonly AppDbContext _context;
 
-        public ProveedorController(AppDbContext context)
+        public ProveedoresController(AppDbContext context)
         {
             _context = context;
         }
 
-        // GET: Proveedor
+        // GET: Proveedores
         public async Task<IActionResult> Index()
         {
             return View(await _context.Proveedores.ToListAsync());
         }
 
-        // GET: Proveedor/Details/5
+        // GET: Proveedores/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -33,39 +33,39 @@ namespace Sistemadeventas_AlmacenMera.Controllers
                 return NotFound();
             }
 
-            var proveedore = await _context.Proveedores
+            var proveedores = await _context.Proveedores
                 .FirstOrDefaultAsync(m => m.IdProveedor == id);
-            if (proveedore == null)
+            if (proveedores == null)
             {
                 return NotFound();
             }
 
-            return View(proveedore);
+            return View(proveedores);
         }
 
-        // GET: Proveedor/Create
+        // GET: Proveedores/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Proveedor/Create
+        // POST: Proveedores/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdProveedor,NombreProveedor,Telefono,Email,Direccion")] Proveedore proveedore)
+        public async Task<IActionResult> Create([Bind("IdProveedor,NombreProveedor,Telefono,Email,Direccion")] Proveedores proveedores)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(proveedore);
+                _context.Add(proveedores);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(proveedore);
+            return View(proveedores);
         }
 
-        // GET: Proveedor/Edit/5
+        // GET: Proveedores/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -73,22 +73,22 @@ namespace Sistemadeventas_AlmacenMera.Controllers
                 return NotFound();
             }
 
-            var proveedore = await _context.Proveedores.FindAsync(id);
-            if (proveedore == null)
+            var proveedores = await _context.Proveedores.FindAsync(id);
+            if (proveedores == null)
             {
                 return NotFound();
             }
-            return View(proveedore);
+            return View(proveedores);
         }
 
-        // POST: Proveedor/Edit/5
+        // POST: Proveedores/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdProveedor,NombreProveedor,Telefono,Email,Direccion")] Proveedore proveedore)
+        public async Task<IActionResult> Edit(int id, [Bind("IdProveedor,NombreProveedor,Telefono,Email,Direccion")] Proveedores proveedores)
         {
-            if (id != proveedore.IdProveedor)
+            if (id != proveedores.IdProveedor)
             {
                 return NotFound();
             }
@@ -97,12 +97,12 @@ namespace Sistemadeventas_AlmacenMera.Controllers
             {
                 try
                 {
-                    _context.Update(proveedore);
+                    _context.Update(proveedores);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ProveedoreExists(proveedore.IdProveedor))
+                    if (!ProveedoresExists(proveedores.IdProveedor))
                     {
                         return NotFound();
                     }
@@ -113,10 +113,10 @@ namespace Sistemadeventas_AlmacenMera.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(proveedore);
+            return View(proveedores);
         }
 
-        // GET: Proveedor/Delete/5
+        // GET: Proveedores/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -124,32 +124,32 @@ namespace Sistemadeventas_AlmacenMera.Controllers
                 return NotFound();
             }
 
-            var proveedore = await _context.Proveedores
+            var proveedores = await _context.Proveedores
                 .FirstOrDefaultAsync(m => m.IdProveedor == id);
-            if (proveedore == null)
+            if (proveedores == null)
             {
                 return NotFound();
             }
 
-            return View(proveedore);
+            return View(proveedores);
         }
 
-        // POST: Proveedor/Delete/5
+        // POST: Proveedores/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var proveedore = await _context.Proveedores.FindAsync(id);
-            if (proveedore != null)
+            var proveedores = await _context.Proveedores.FindAsync(id);
+            if (proveedores != null)
             {
-                _context.Proveedores.Remove(proveedore);
+                _context.Proveedores.Remove(proveedores);
             }
 
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool ProveedoreExists(int id)
+        private bool ProveedoresExists(int id)
         {
             return _context.Proveedores.Any(e => e.IdProveedor == id);
         }

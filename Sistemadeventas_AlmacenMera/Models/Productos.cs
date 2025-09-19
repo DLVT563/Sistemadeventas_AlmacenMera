@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class Producto
+public class Productos
 {
     public int IdProducto { get; set; }
 
@@ -37,5 +37,5 @@ public partial class Producto
 
     public virtual Categoria? IdCategoriaNavigation { get; set; }
 
-    public virtual Proveedore? IdProveedorNavigation { get; set; }
+    public virtual Proveedores? IdProveedorNavigation { get; set; }
 }

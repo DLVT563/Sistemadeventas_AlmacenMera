@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Sistemadeventas_AlmacenMera.Models;
 
-public partial class Usuario
+public class Usuario
 {
     public int IdUsuario { get; set; }
 
@@ -21,7 +21,7 @@ public partial class Usuario
 
     public string? FotoPerfilPath { get; set; }
 
-    public virtual Role? IdRolNavigation { get; set; }
+    public virtual Roles? IdRolNavigation { get; set; }
 
     public virtual ICollection<Venta> Venta { get; set; } = new List<Venta>();
 }
