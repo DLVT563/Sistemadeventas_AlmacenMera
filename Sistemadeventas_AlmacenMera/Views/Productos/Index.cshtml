@@ -63,21 +63,23 @@
             <td>
                 @Html.DisplayFor(modelItem => item.CodigoBarras)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.FotoPath)
-            </td>
+                <td>
+                    <img src="@item.FotoPath"
+                         alt="Imagen del producto"
+                         style="width:80px; height:80px; object-fit:cover; border-radius:8px;" />
+
+
+                </td>
+
             <td>
                 @Html.DisplayFor(modelItem => item.FechaCreacion)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.FechaVencimiento)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdCategoriaNavigation.NombreCategoria)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.IdProveedorNavigation.NombreProveedor)
-            </td>
+                <td>@item.IdCategoriaNavigation?.NombreCategoria</td>
+                <td>@item.IdProveedorNavigation?.NombreProveedor</td>
+
             <td>
                 <a asp-action="Edit" asp-route-id="@item.IdProducto">Edit</a> |
                 <a asp-action="Details" asp-route-id="@item.IdProducto">Details</a> |
