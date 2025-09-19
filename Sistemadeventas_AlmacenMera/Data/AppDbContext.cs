@@ -42,6 +42,29 @@ namespace Sistemadeventas_AlmacenMera.Data
                       .WithMany(r => r.Usuarios)
                       .HasForeignKey(e => e.IdRol)
                       .OnDelete(DeleteBehavior.Restrict);
+
+                entity.HasData(
+        new Usuario
+        {
+            IdUsuario = 1,
+            Nombre = "Administrador",
+            Email = "admin@admin.com",
+            Contraseña = "admin123", 
+            IdRol = 1,
+            FechaCreacion = new DateTime(2025, 01, 01),
+            Estado = "Activo"
+        },
+        new Usuario
+        {
+            IdUsuario = 2,
+            Nombre = "Empleado",
+            Email = "emp@emp.com",
+            Contraseña = "123",
+            IdRol = 2,
+            FechaCreacion = new DateTime(2025, 01, 01),
+            Estado = "Activo"
+        }
+    );
             });
 
             // Roles
@@ -49,6 +72,11 @@ namespace Sistemadeventas_AlmacenMera.Data
             {
                 entity.HasKey(e => e.IdRol);
                 entity.Property(e => e.NombreRol).HasMaxLength(100).IsRequired();
+
+                entity.HasData(
+        new Roles { IdRol = 1, NombreRol = "Admin" },
+        new Roles { IdRol = 2, NombreRol = "Empleado" }
+    );
             });
 
             // Venta

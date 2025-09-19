@@ -358,6 +358,18 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                     b.HasKey("IdRol");
 
                     b.ToTable("Roles");
+
+                    b.HasData(
+                        new
+                        {
+                            IdRol = 1,
+                            NombreRol = "Admin"
+                        },
+                        new
+                        {
+                            IdRol = 2,
+                            NombreRol = "Empleado"
+                        });
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Usuario", b =>
@@ -406,6 +418,28 @@ namespace Sistemadeventas_AlmacenMera.Migrations
                     b.HasIndex("IdRol");
 
                     b.ToTable("Usuarios");
+
+                    b.HasData(
+                        new
+                        {
+                            IdUsuario = 1,
+                            Contraseña = "admin123",
+                            Email = "admin@admin.com",
+                            Estado = "Activo",
+                            FechaCreacion = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IdRol = 1,
+                            Nombre = "Administrador"
+                        },
+                        new
+                        {
+                            IdUsuario = 2,
+                            Contraseña = "123",
+                            Email = "emp@emp.com",
+                            Estado = "Activo",
+                            FechaCreacion = new DateTime(2025, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            IdRol = 2,
+                            Nombre = "Empleado"
+                        });
                 });
 
             modelBuilder.Entity("Sistemadeventas_AlmacenMera.Models.Venta", b =>
