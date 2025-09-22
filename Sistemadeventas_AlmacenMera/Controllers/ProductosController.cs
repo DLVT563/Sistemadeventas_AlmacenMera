@@ -19,14 +19,14 @@ namespace Sistemadeventas_AlmacenMera.Controllers
             _context = context;
         }
 
-        // GET: Productos
+        [HttpGet]
         public async Task<IActionResult> Index()
         {
             var appDbContext = _context.Productos.Include(p => p.IdCategoriaNavigation).Include(p => p.IdProveedorNavigation);
             return View(await appDbContext.ToListAsync());
         }
 
-        // GET: Productos/Details/5
+        [HttpGet]
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -46,7 +46,7 @@ namespace Sistemadeventas_AlmacenMera.Controllers
             return View(productos);
         }
 
-        // GET: Productos/Create
+        [HttpGet]
         public IActionResult Create()
         {
             ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "NombreCategoria");
@@ -54,10 +54,6 @@ namespace Sistemadeventas_AlmacenMera.Controllers
             return View();
         }
 
-        // POST: Productos/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        // POST: Productos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("IdProducto,NombreProducto,Descripcion,Precio,Stock,IdProveedor,IdCategoria,FechaVencimiento")] Productos productos, IFormFile? FotoFile)
@@ -105,9 +101,6 @@ namespace Sistemadeventas_AlmacenMera.Controllers
             ViewData["IdProveedor"] = new SelectList(_context.Proveedores, "IdProveedor", "NombreProveedor", productos.IdProveedor);
             return View(productos);
         }
-
-
-        // Método auxiliar para generar código de barras aleatorio
         private string GenerarCodigoBarras()
         {
             var random = new Random();
@@ -115,7 +108,7 @@ namespace Sistemadeventas_AlmacenMera.Controllers
         }
 
 
-        // GET: Productos/Edit/5
+        [HttpGet]
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -133,12 +126,9 @@ namespace Sistemadeventas_AlmacenMera.Controllers
             return View(productos);
         }
 
-        // POST: Productos/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdProducto,NombreProducto,Descripcion,Precio,Stock,CodigoBarras,FotoPath,IdProveedor,IdCategoria,FechaCreacion,FechaVencimiento")] Productos productos)
+        public async Task<IActionResult> Edit(int id, [Bind("IdProducto,NombreProducto,Descripcion,Precio,Stock,CodigoBarras,FotoPath,IdProveedor,IdCategoria,FechaCreacion,FechaVencimiento")] Productos productos, IFormFile? FotoFile)
         {
             if (id != productos.IdProducto)
             {
@@ -149,7 +139,51 @@ namespace Sistemadeventas_AlmacenMera.Controllers
             {
                 try
                 {
-                    _context.Update(productos);
+                    var productoDb = await _context.Productos.FindAsync(id);
+                    if (productoDb == null)
+                    {
+                        return NotFound();
+                    }
+
+                    productoDb.NombreProducto = productos.NombreProducto;
+                    productoDb.Descripcion = productos.Descripcion;
+                    productoDb.Precio = productos.Precio;
+                    productoDb.Stock = productos.Stock;
+                    productoDb.IdProveedor = productos.IdProveedor;
+                    productoDb.IdCategoria = productos.IdCategoria;
+                    productoDb.FechaVencimiento = productos.FechaVencimiento;
+                    productoDb.CodigoBarras = productos.CodigoBarras;
+                    productoDb.FechaCreacion = productos.FechaCreacion;
+
+                    if (FotoFile != null && FotoFile.Length > 0)
+                    {
+                        string uploadFolder = Path.Combine("wwwroot", "productosImg");
+                        if (!Directory.Exists(uploadFolder))
+                        {
+                            Directory.CreateDirectory(uploadFolder);
+                        }
+
+                        if (!string.IsNullOrEmpty(productoDb.FotoPath))
+                        {
+                            string oldPath = Path.Combine("wwwroot", productoDb.FotoPath.TrimStart('/'));
+                            if (System.IO.File.Exists(oldPath))
+                            {
+                                System.IO.File.Delete(oldPath);
+                            }
+                        }
+
+                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(FotoFile.FileName);
+                        string filePath = Path.Combine(uploadFolder, fileName);
+
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await FotoFile.CopyToAsync(stream);
+                        }
+
+                        productoDb.FotoPath = "/productosImg/" + fileName;
+                    }
+
+                    _context.Update(productoDb);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
@@ -165,10 +199,12 @@ namespace Sistemadeventas_AlmacenMera.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
+
             ViewData["IdCategoria"] = new SelectList(_context.Categorias, "IdCategoria", "NombreCategoria", productos.IdCategoria);
             ViewData["IdProveedor"] = new SelectList(_context.Proveedores, "IdProveedor", "NombreProveedor", productos.IdProveedor);
             return View(productos);
         }
+
 
         // GET: Productos/Delete/5
         public async Task<IActionResult> Delete(int? id)

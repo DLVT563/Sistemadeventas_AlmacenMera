@@ -1,12 +1,19 @@
 @using Microsoft.AspNetCore.Http
-@{ 
+@{
     var usuarioId = Context.Session.GetInt32("UsuarioId");
     var nombreUsuario = Context.Session.GetString("NombreUsuario");
     var fotoUsuario = Context.Session.GetString("FotoUsuario");
-    var inicialUsuario = !string.IsNullOrEmpty(nombreUsuario) ? nombreUsuario.Substring(0, 1).ToUpper() : "U";
+    var rolUsuarioId = Context.Session.GetInt32("RolUsuario");
+
+    bool esAdmin = rolUsuarioId == 1;
+    bool esEmpleado = rolUsuarioId == 2;
+
+    var inicialUsuario = !string.IsNullOrEmpty(nombreUsuario)
+        ? nombreUsuario.Substring(0, 1).ToUpper()
+        : "U";
 }
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -17,60 +24,73 @@
 </head>
 <body>
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+        <nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom shadow-sm mb-3">
             <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Sistemadeventas_AlmacenMera</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <a class="navbar-brand fw-bold text-primary" asp-area="" asp-controller="Home" asp-action="Index">
+                    Sistemadeventas_AlmacenMera
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNav"
+                        aria-controls="menuNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        @if (usuarioId.HasValue)
+
+                <div class="collapse navbar-collapse justify-content-between" id="menuNav">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+                        @if (esAdmin || esEmpleado)
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                                <a class="nav-link" asp-area="" asp-controller="Ventas" asp-action="PuntoVenta">Punto de Venta</a>
+                            </li>
+                        }
+
+                        @if (esAdmin)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Productos" asp-action="Index">Producto</a>
+                                <a class="nav-link" asp-area="" asp-controller="Productos" asp-action="Index">Productos</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Proveedores" asp-action="Index">Proveedor</a>
+                                <a class="nav-link" asp-area="" asp-controller="Proveedores" asp-action="Index">Proveedores</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Categorias" asp-action="Index">Categoria</a>
+                                <a class="nav-link" asp-area="" asp-controller="Categorias" asp-action="Index">Categorías</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+                                <a class="nav-link" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
                             </li>
-                           
                         }
                     </ul>
+
                     <ul class="navbar-nav">
                         @if (usuarioId.HasValue)
                         {
                             <li class="nav-item d-flex align-items-center gap-2">
                                 @if (!string.IsNullOrEmpty(fotoUsuario))
                                 {
-                                    <img src="@Url.Content($"~/@fotoUsuario")" alt="Foto de perfil" class="rounded-circle avatar-nav" />
+                                    <img src="@Url.Content($"~/@fotoUsuario")" alt="Foto de perfil"
+                                         class="rounded-circle border" style="width:40px;height:40px;" />
                                 }
                                 else
                                 {
-                                    <span class="avatar-placeholder">@inicialUsuario</span>
+                                    <span class="rounded-circle bg-primary text-white d-flex justify-content-center align-items-center"
+                                          style="width:40px;height:40px;">@inicialUsuario</span>
                                 }
                                 <span class="nav-link text-dark mb-0">Hola, @nombreUsuario</span>
                             </li>
                             <li class="nav-item">
                                 <form asp-area="" asp-controller="Login" asp-action="Logout" method="post" class="d-inline">
                                     @Html.AntiForgeryToken()
-                                    <button type="submit" class="btn btn-link nav-link text-dark px-0">Cerrar sesión</button>
+                                    <button type="submit" class="btn btn-link nav-link px-0">Cerrar sesión</button>
                                 </form>
                             </li>
                         }
                         else
                         {
                             <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="Login">Iniciar sesión</a>
+                                <a class="nav-link" asp-area="" asp-controller="Login" asp-action="Login">Iniciar sesión</a>
                             </li>
                         }
                     </ul>
@@ -78,17 +98,20 @@
             </div>
         </nav>
     </header>
+
     <div class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - Sistemadeventas_AlmacenMera - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer class="border-top footer text-muted py-3">
+        <div class="container text-center">
+            &copy; 2025 - Sistemadeventas_AlmacenMera -
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>

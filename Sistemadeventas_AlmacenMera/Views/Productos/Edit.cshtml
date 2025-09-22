@@ -10,60 +10,80 @@
 <hr />
 <div class="row">
     <div class="col-md-4">
-        <form asp-action="Edit">
+        <form asp-action="Edit" method="post" enctype="multipart/form-data">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="IdProducto" />
+
             <div class="form-group">
                 <label asp-for="NombreProducto" class="control-label"></label>
                 <input asp-for="NombreProducto" class="form-control" />
                 <span asp-validation-for="NombreProducto" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Descripcion" class="control-label"></label>
                 <input asp-for="Descripcion" class="form-control" />
                 <span asp-validation-for="Descripcion" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Precio" class="control-label"></label>
                 <input asp-for="Precio" class="form-control" />
                 <span asp-validation-for="Precio" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="Stock" class="control-label"></label>
                 <input asp-for="Stock" class="form-control" />
                 <span asp-validation-for="Stock" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="CodigoBarras" class="control-label"></label>
                 <input asp-for="CodigoBarras" class="form-control" />
                 <span asp-validation-for="CodigoBarras" class="text-danger"></span>
             </div>
+
+            <!-- Imagen actual -->
+            @if (!string.IsNullOrEmpty(Model.FotoPath))
+            {
+                <div class="form-group">
+                    <label>Imagen actual:</label><br />
+                    <img src="@Model.FotoPath" alt="Producto" style="max-width:150px; max-height:150px;" class="img-thumbnail" />
+                </div>
+            }
+
+            <!-- Subir nueva imagen -->
             <div class="form-group">
-                <label asp-for="FotoPath" class="control-label"></label>
-                <input asp-for="FotoPath" class="form-control" />
-                <span asp-validation-for="FotoPath" class="text-danger"></span>
+                <label for="FotoFile" class="control-label">Cambiar foto</label>
+                <input type="file" name="FotoFile" class="form-control" />
             </div>
+
             <div class="form-group">
                 <label asp-for="IdProveedor" class="control-label"></label>
                 <select asp-for="IdProveedor" class="form-control" asp-items="ViewBag.IdProveedor"></select>
                 <span asp-validation-for="IdProveedor" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="IdCategoria" class="control-label"></label>
                 <select asp-for="IdCategoria" class="form-control" asp-items="ViewBag.IdCategoria"></select>
                 <span asp-validation-for="IdCategoria" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="FechaCreacion" class="control-label"></label>
-                <input asp-for="FechaCreacion" class="form-control" />
+                <input asp-for="FechaCreacion" class="form-control" readonly />
                 <span asp-validation-for="FechaCreacion" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="FechaVencimiento" class="control-label"></label>
-                <input asp-for="FechaVencimiento" class="form-control" />
+                <input asp-for="FechaVencimiento" type="date" class="form-control" />
                 <span asp-validation-for="FechaVencimiento" class="text-danger"></span>
             </div>
-            <div class="form-group">
+
+            <div class="form-group mt-3">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
         </form>
@@ -75,5 +95,7 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
