@@ -28,7 +28,7 @@
                 @Html.DisplayNameFor(model => model.Estado)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.FotoPerfilPath)
+                Foto
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.IdRolNavigation)
@@ -55,7 +55,9 @@
                 @Html.DisplayFor(modelItem => item.Estado)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.FotoPerfilPath)
+                <img src="@item.FotoPerfilPath"
+                     alt="Imagen del usuario"
+                     style="width:80px; height:80px; object-fit:cover; border-radius:8px;" />
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.IdRolNavigation.NombreRol)
