@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
@@ -53,14 +55,41 @@ namespace Sistemadeventas_AlmacenMera.Controllers
         }
 
         // POST: Usuarios/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("IdUsuario,Nombre,Email,Contraseña,IdRol,FechaCreacion,Estado,FotoPerfilPath")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("IdUsuario,Nombre,Email,Contraseña,IdRol,FechaCreacion,Estado,FotoPerfilPath")] Usuario usuario, IFormFile? FotoPerfilFile)
         {
             if (ModelState.IsValid)
             {
+                // Manejo de imagen de perfil
+                if (FotoPerfilFile != null && FotoPerfilFile.Length > 0)
+                {
+                    // Ruta absoluta de wwwroot/usuariosImg
+                    string uploadFolder = Path.Combine("wwwroot", "usuariosImg");
+
+                    // Crear carpeta si no existe
+                    if (!Directory.Exists(uploadFolder))
+                    {
+                        Directory.CreateDirectory(uploadFolder);
+                    }
+
+                    // Nombre único para evitar colisiones
+                    string fileName = Guid.NewGuid().ToString() + Path.GetExtension(FotoPerfilFile.FileName);
+                    string filePath = Path.Combine(uploadFolder, fileName);
+
+                    // Guardar archivo físicamente en wwwroot/usuariosImg
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await FotoPerfilFile.CopyToAsync(stream);
+                    }
+
+                    // Guardar en BD la ruta relativa (para usar en <img>)
+                    usuario.FotoPerfilPath = "/usuariosImg/" + fileName;
+                }
+
+                // Asignar fecha de creación
+                usuario.FechaCreacion = DateTime.Now;
+
                 _context.Add(usuario);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
@@ -87,11 +116,9 @@ namespace Sistemadeventas_AlmacenMera.Controllers
         }
 
         // POST: Usuarios/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("IdUsuario,Nombre,Email,Contraseña,IdRol,FechaCreacion,Estado,FotoPerfilPath")] Usuario usuario)
+        public async Task<IActionResult> Edit(int id, [Bind("IdUsuario,Nombre,Email,Contraseña,IdRol,FechaCreacion,Estado,FotoPerfilPath")] Usuario usuario, IFormFile? FotoPerfilFile)
         {
             if (id != usuario.IdUsuario)
             {
@@ -102,6 +129,32 @@ namespace Sistemadeventas_AlmacenMera.Controllers
             {
                 try
                 {
+                    // Manejo de imagen de perfil (si se ha subido una nueva imagen)
+                    if (FotoPerfilFile != null && FotoPerfilFile.Length > 0)
+                    {
+                        // Ruta absoluta de wwwroot/usuariosImg
+                        string uploadFolder = Path.Combine("wwwroot", "usuariosImg");
+
+                        // Crear carpeta si no existe
+                        if (!Directory.Exists(uploadFolder))
+                        {
+                            Directory.CreateDirectory(uploadFolder);
+                        }
+
+                        // Nombre único para evitar colisiones
+                        string fileName = Guid.NewGuid().ToString() + Path.GetExtension(FotoPerfilFile.FileName);
+                        string filePath = Path.Combine(uploadFolder, fileName);
+
+                        // Guardar archivo físicamente en wwwroot/usuariosImg
+                        using (var stream = new FileStream(filePath, FileMode.Create))
+                        {
+                            await FotoPerfilFile.CopyToAsync(stream);
+                        }
+
+                        // Guardar en BD la ruta relativa (para usar en <img>)
+                        usuario.FotoPerfilPath = "/usuariosImg/" + fileName;
+                    }
+
                     _context.Update(usuario);
                     await _context.SaveChangesAsync();
                 }
