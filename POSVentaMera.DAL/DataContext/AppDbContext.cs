@@ -1,5 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Sistemadeventas_AlmacenMera.Models;
+using POSVentaMera.Models;
 
 namespace Sistemadeventas_AlmacenMera.Data
 {

@@ -1,6 +1,6 @@
 using System.ComponentModel.DataAnnotations;
 
-namespace Sistemadeventas_AlmacenMera.ViewModel
+namespace POSVentaMera.web.Models.ViewModel
 {
     public class LoginViewModel
     {

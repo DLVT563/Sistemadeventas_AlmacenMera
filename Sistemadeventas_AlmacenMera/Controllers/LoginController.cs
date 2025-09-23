@@ -2,8 +2,8 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using POSVentaMera.web.Models.ViewModel;
 using Sistemadeventas_AlmacenMera.Data;
-using Sistemadeventas_AlmacenMera.ViewModel;
 
 namespace Sistemadeventas_AlmacenMera.Controllers
 {

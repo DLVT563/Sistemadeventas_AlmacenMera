@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Sistemadeventas_AlmacenMera.Models;
+namespace POSVentaMera.Models;
 
 public class Usuario
 {
