@@ -7757,9 +7757,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj",
-      "projectName": "Sistemadeventas_AlmacenMera",
-      "projectPath": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera.csproj",
+      "projectUniqueName": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\POSVentaMera.web.csproj",
+      "projectName": "POSVentaMera.web",
+      "projectPath": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\POSVentaMera.web.csproj",
       "packagesPath": "C:\\Users\\Angel\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\Angel\\Desktop\\MERA\\Sistemadeventas_AlmacenMera\\Sistemadeventas_AlmacenMera\\obj\\",
       "projectStyle": "PackageReference",
