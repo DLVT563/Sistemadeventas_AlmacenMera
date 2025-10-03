@@ -1,0 +1,105 @@
+@model IEnumerable<POSVentaMera.Models.Contribuyente>
+@{
+    ViewData["Title"] = "Contribuyentes";
+    string? estado = ViewBag.EstadoFiltro as string;
+    string? search = ViewBag.Search as string;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3">Gestión de Contribuyentes</h1>
+    <a asp-action="Create" class="btn btn-primary">Nuevo Contribuyente</a>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3">
+            <div class="col-md-4">
+                <label class="form-label">Buscar</label>
+                <input type="text" name="search" value="@search" class="form-control" placeholder="RUC o nombre" />
+            </div>
+            <div class="col-md-3">
+                <label class="form-label">Estatus</label>
+                <select class="form-select" name="estado">
+                    <option value="">Todos</option>
+                    <option value="Activo" selected="@(estado == "Activo" ? "selected" : null)">Activo</option>
+                    <option value="Inactivo" selected="@(estado == "Inactivo" ? "selected" : null)">Inactivo</option>
+                </select>
+            </div>
+            <div class="col-md-2 align-self-end">
+                <button type="submit" class="btn btn-outline-primary w-100">Filtrar</button>
+            </div>
+            <div class="col-md-2 align-self-end">
+                <a asp-action="Index" class="btn btn-link">Limpiar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-striped align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>RUC</th>
+                <th>Contribuyente</th>
+                <th>Estatus</th>
+                <th>Contacto</th>
+                <th>Cobros pendientes</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="6" class="text-center text-muted py-4">No se encontraron contribuyentes con los filtros aplicados.</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var item in Model)
+            {
+                var montoPendiente = item.Cobranzas.Where(c => c.Estado == "Pendiente").Sum(c => c.Monto);
+                <tr>
+                    <td class="fw-semibold">@item.Ruc</td>
+                    <td>
+                        <div class="fw-semibold">@item.NombreContribuyente</div>
+                        <small class="text-muted">@item.Email</small>
+                    </td>
+                    <td>
+                        <span class="badge @(item.Estatus == "Activo" ? "bg-success" : "bg-secondary")">@item.Estatus</span>
+                    </td>
+                    <td>
+                        <div>@item.Contacto</div>
+                        <small class="text-muted">@item.PlataformaElectronica</small>
+                    </td>
+                    <td>
+                        @if (montoPendiente > 0)
+                        {
+                            <span class="text-danger fw-semibold">@montoPendiente.ToString("C")</span>
+                        }
+                        else
+                        {
+                            <span class="text-muted">Sin deuda</span>
+                        }
+                    </td>
+                    <td class="text-end">
+                        <div class="btn-group">
+                            <a asp-action="Details" asp-route-id="@item.IdContribuyente" class="btn btn-outline-secondary btn-sm">Detalles</a>
+                            <a asp-action="Edit" asp-route-id="@item.IdContribuyente" class="btn btn-outline-primary btn-sm">Editar</a>
+                            <a asp-controller="Cobranzas" asp-action="Create" asp-route-contribuyenteId="@item.IdContribuyente" class="btn btn-outline-success btn-sm">Nuevo cobro</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>

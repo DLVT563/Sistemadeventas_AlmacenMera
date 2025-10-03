@@ -1,0 +1,52 @@
+@model POSVentaMera.Models.Cobranza
+@{
+    var contribuyentes = ViewBag.IdContribuyente as Microsoft.AspNetCore.Mvc.Rendering.SelectList;
+}
+<div class="row g-3">
+    <div class="col-md-6">
+        <label asp-for="IdContribuyente" class="form-label"></label>
+        <select asp-for="IdContribuyente" class="form-select" asp-items="contribuyentes">
+            <option value="">Seleccione un contribuyente</option>
+        </select>
+        <span asp-validation-for="IdContribuyente" class="text-danger"></span>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="Periodo" class="form-label"></label>
+        <input asp-for="Periodo" class="form-control" type="month" asp-format="{0:yyyy-MM}" />
+        <span asp-validation-for="Periodo" class="text-danger"></span>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="Monto" class="form-label"></label>
+        <input asp-for="Monto" class="form-control" />
+        <span asp-validation-for="Monto" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-6">
+        <label asp-for="Servicio" class="form-label"></label>
+        <input asp-for="Servicio" class="form-control" />
+        <span asp-validation-for="Servicio" class="text-danger"></span>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="Estado" class="form-label"></label>
+        <select asp-for="Estado" class="form-select">
+            <option value="Pendiente">Pendiente</option>
+            <option value="Pagado">Pagado</option>
+            <option value="En seguimiento">En seguimiento</option>
+        </select>
+    </div>
+    <div class="col-md-3">
+        <div class="form-check mt-4">
+            <input asp-for="EsRecurrente" class="form-check-input" />
+            <label asp-for="EsRecurrente" class="form-check-label"></label>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <label asp-for="FechaPago" class="form-label"></label>
+        <input asp-for="FechaPago" class="form-control" type="date" />
+    </div>
+    <div class="col-12">
+        <label asp-for="Notas" class="form-label"></label>
+        <textarea asp-for="Notas" class="form-control" rows="3"></textarea>
+    </div>
+</div>

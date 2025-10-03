@@ -7,6 +7,7 @@
 
     bool esAdmin = rolUsuarioId == 1;
     bool esEmpleado = rolUsuarioId == 2;
+    bool esAsesor = rolUsuarioId == 3;
 
     var inicialUsuario = !string.IsNullOrEmpty(nombreUsuario)
         ? nombreUsuario.Substring(0, 1).ToUpper()
@@ -60,6 +61,15 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" asp-area="" asp-controller="Usuarios" asp-action="Index">Usuarios</a>
+                            </li>
+                        }
+                        @if (esAdmin || esAsesor)
+                        {
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Contribuyentes" asp-action="Index">Contribuyentes</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" asp-area="" asp-controller="Cobranzas" asp-action="Index">Cobranza</a>
                             </li>
                         }
                     </ul>

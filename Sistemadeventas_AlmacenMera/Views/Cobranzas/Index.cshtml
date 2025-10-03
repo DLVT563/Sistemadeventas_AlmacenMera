@@ -1,0 +1,139 @@
+@model IEnumerable<POSVentaMera.Models.Cobranza>
+@{
+    ViewData["Title"] = "Módulo de Cobranza";
+    var contribuyenteSelectList = ViewBag.Contribuyentes as Microsoft.AspNetCore.Mvc.Rendering.SelectList;
+    decimal totalPendiente = ViewBag.ResumenPendiente is decimal pendiente ? pendiente : 0m;
+    decimal totalPagado = ViewBag.ResumenPagado is decimal pagado ? pagado : 0m;
+    int? mes = ViewBag.Mes as int?;
+    int? anio = ViewBag.Anio as int?;
+    string? estado = ViewBag.Estado as string;
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3">Cobranza de Servicios</h1>
+    <a asp-action="Create" class="btn btn-primary">Registrar Cobro</a>
+</div>
+
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        @TempData["SuccessMessage"]
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+    </div>
+}
+
+<div class="row g-3 mb-4">
+    <div class="col-md-6">
+        <div class="card text-bg-light h-100">
+            <div class="card-body">
+                <h5 class="card-title">Total pendiente</h5>
+                <p class="display-6">@totalPendiente.ToString("C")</p>
+                <small class="text-muted">Suma de todos los cobros con estado pendiente filtrados.</small>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="card text-bg-light h-100">
+            <div class="card-body">
+                <h5 class="card-title">Total recaudado</h5>
+                <p class="display-6 text-success">@totalPagado.ToString("C")</p>
+                <small class="text-muted">Cobros con estado pagado en el periodo filtrado.</small>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3 align-items-end">
+            <div class="col-md-4">
+                <label class="form-label">Contribuyente</label>
+                <select class="form-select" name="contribuyenteId" asp-items="contribuyenteSelectList">
+                    <option value="">Todos</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Estado</label>
+                <select class="form-select" name="estado">
+                    <option value="">Todos</option>
+                    <option value="Pendiente" selected="@(estado == "Pendiente" ? "selected" : null)">Pendiente</option>
+                    <option value="Pagado" selected="@(estado == "Pagado" ? "selected" : null)">Pagado</option>
+                    <option value="En seguimiento" selected="@(estado == "En seguimiento" ? "selected" : null)">En seguimiento</option>
+                </select>
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Mes</label>
+                <input type="number" name="mes" min="1" max="12" value="@(mes.HasValue ? mes.ToString() : string.Empty)" class="form-control" />
+            </div>
+            <div class="col-md-2">
+                <label class="form-label">Año</label>
+                <input type="number" name="anio" min="2000" max="2100" value="@(anio.HasValue ? anio.ToString() : string.Empty)" class="form-control" />
+            </div>
+            <div class="col-md-2 d-flex gap-2">
+                <button type="submit" class="btn btn-outline-primary w-100">Filtrar</button>
+                <a asp-action="Index" class="btn btn-link">Limpiar</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="table-responsive">
+    <table class="table table-hover align-middle">
+        <thead class="table-light">
+            <tr>
+                <th>Contribuyente</th>
+                <th>Periodo</th>
+                <th>Servicio</th>
+                <th>Monto</th>
+                <th>Estado</th>
+                <th>Fecha pago</th>
+                <th>Notas</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+        @if (!Model.Any())
+        {
+            <tr>
+                <td colspan="8" class="text-center text-muted py-4">No hay cobros registrados con los filtros seleccionados.</td>
+            </tr>
+        }
+        else
+        {
+            foreach (var cobranza in Model)
+            {
+                <tr>
+                    <td>
+                        <strong>@cobranza.Contribuyente?.NombreContribuyente</strong><br />
+                        <small class="text-muted">@cobranza.Contribuyente?.Ruc</small>
+                    </td>
+                    <td>@cobranza.Periodo.ToString("MMMM yyyy")</td>
+                    <td>@cobranza.Servicio</td>
+                    <td>@cobranza.Monto.ToString("C")</td>
+                    <td>
+                        <form asp-action="ActualizarEstado" method="post" class="d-flex gap-2 align-items-center">
+                            @Html.AntiForgeryToken()
+                            <input type="hidden" name="id" value="@cobranza.IdCobranza" />
+                            <select name="estado" class="form-select form-select-sm">
+                                <option value="Pendiente" selected="@(cobranza.Estado == "Pendiente" ? "selected" : null)">Pendiente</option>
+                                <option value="Pagado" selected="@(cobranza.Estado == "Pagado" ? "selected" : null)">Pagado</option>
+                                <option value="En seguimiento" selected="@(cobranza.Estado == "En seguimiento" ? "selected" : null)">En seguimiento</option>
+                            </select>
+                            <button type="submit" class="btn btn-sm btn-outline-primary">Actualizar</button>
+                        </form>
+                    </td>
+                    <td>@(cobranza.FechaPago?.ToString("d") ?? "-")</td>
+                    <td>@cobranza.Notas</td>
+                    <td class="text-end">
+                        <div class="btn-group">
+                            <a asp-action="Details" asp-route-id="@cobranza.IdCobranza" class="btn btn-outline-secondary btn-sm">Detalle</a>
+                            <a asp-action="Edit" asp-route-id="@cobranza.IdCobranza" class="btn btn-outline-primary btn-sm">Editar</a>
+                            <a asp-action="Delete" asp-route-id="@cobranza.IdCobranza" class="btn btn-outline-danger btn-sm">Eliminar</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+        }
+        </tbody>
+    </table>
+</div>

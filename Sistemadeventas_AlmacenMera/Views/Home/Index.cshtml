@@ -58,6 +58,27 @@
         </div>
     </div>
 
+    <div class="row mt-4">
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">🧾 Contribuyentes</h5>
+                    <p class="card-text">Centraliza la información tributaria y de contacto de cada cliente asesorado.</p>
+                    <a asp-controller="Contribuyentes" asp-action="Index" class="btn btn-outline-primary">Ver Contribuyentes</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="card shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">💳 Módulo de Cobranza</h5>
+                    <p class="card-text">Gestiona suscripciones mensuales y servicios adicionales con seguimiento de pagos.</p>
+                    <a asp-controller="Cobranzas" asp-action="Index" class="btn btn-outline-success">Ir a Cobranza</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="mt-5">
         <p class="text-muted">© @DateTime.Now.Year - Sistema de Ventas Abarrotes Mera</p>
     </div>
