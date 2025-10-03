@@ -1,0 +1,31 @@
+@model POSVentaMera.Models.Contribuyente
+@{
+    ViewData["Title"] = "Eliminar Contribuyente";
+}
+
+<h1 class="h4 mb-4">¿Eliminar contribuyente?</h1>
+
+<div class="alert alert-warning">
+    <p class="mb-0">Esta acción eliminará al contribuyente <strong>@Model.NombreContribuyente</strong> y todos sus registros de cobranza asociados.</p>
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">RUC</dt>
+            <dd class="col-sm-9">@Model.Ruc</dd>
+
+            <dt class="col-sm-3">Contacto</dt>
+            <dd class="col-sm-9">@Model.Contacto</dd>
+
+            <dt class="col-sm-3">Email</dt>
+            <dd class="col-sm-9">@Model.Email</dd>
+        </dl>
+    </div>
+</div>
+
+<form asp-action="Delete" method="post" class="d-flex gap-2">
+    <input type="hidden" asp-for="IdContribuyente" />
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+</form>

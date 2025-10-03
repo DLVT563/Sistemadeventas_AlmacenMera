@@ -1,0 +1,99 @@
+@model POSVentaMera.Models.Contribuyente
+@{
+    ViewData["Title"] = "Detalle de Contribuyente";
+}
+
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1 class="h3">@Model.NombreContribuyente</h1>
+    <div class="btn-group">
+        <a asp-action="Edit" asp-route-id="@Model.IdContribuyente" class="btn btn-primary">Editar</a>
+        <a asp-controller="Cobranzas" asp-action="Create" asp-route-contribuyenteId="@Model.IdContribuyente" class="btn btn-success">Agregar cobro</a>
+        <a asp-action="Index" class="btn btn-secondary">Volver</a>
+    </div>
+</div>
+
+<div class="row g-3 mb-4">
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-header">Información tributaria</div>
+            <div class="card-body">
+                <p><strong>RUC:</strong> @Model.Ruc</p>
+                <p><strong>Estatus:</strong> <span class="badge @(Model.Estatus == "Activo" ? "bg-success" : "bg-secondary")">@Model.Estatus</span></p>
+                <p><strong>Tipo:</strong> @Model.TipoContribuyente</p>
+                <p><strong>Régimen Tributario:</strong> @Model.RegimenTributario</p>
+                <p><strong>Régimen Laboral:</strong> @Model.RegimenLaboral</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-header">Credenciales</div>
+            <div class="card-body">
+                <p><strong>P. Electrónica:</strong> @Model.PlataformaElectronica</p>
+                <p><strong>Usuario SOL:</strong> @Model.IdentificadorSol</p>
+                <p><strong>Clave SOL:</strong> @Model.ClaveSol</p>
+                <p><strong>Usuario AFPNet:</strong> @Model.IdentificadorAfpenet</p>
+                <p><strong>Clave AFPNet:</strong> @Model.ClaveAfpenet</p>
+                <p><strong>Usuario BN:</strong> @Model.IdentificadorBn</p>
+                <p><strong>Clave BN:</strong> @Model.ClaveBn</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card h-100">
+            <div class="card-header">Contacto</div>
+            <div class="card-body">
+                <p><strong>Contacto:</strong> @Model.Contacto</p>
+                <p><strong>Email:</strong> @Model.Email</p>
+                <p><strong>Observaciones:</strong></p>
+                <p class="text-muted">@Model.ObservacionesInternas</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<h2 class="h4 mb-3">Cobranza</h2>
+
+@if (!Model.Cobranzas.Any())
+{
+    <div class="alert alert-info">Aún no se han registrado cobros para este contribuyente.</div>
+}
+else
+{
+    <div class="table-responsive">
+        <table class="table table-hover">
+            <thead class="table-light">
+                <tr>
+                    <th>Periodo</th>
+                    <th>Servicio</th>
+                    <th>Monto</th>
+                    <th>Estado</th>
+                    <th>Fecha de pago</th>
+                    <th>Notas</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            @foreach (var cobranza in Model.Cobranzas)
+            {
+                <tr>
+                    <td>@cobranza.Periodo.ToString("MMMM yyyy")</td>
+                    <td>@cobranza.Servicio</td>
+                    <td>@cobranza.Monto.ToString("C")</td>
+                    <td>
+                        <span class="badge @(cobranza.Estado == "Pagado" ? "bg-success" : "bg-warning text-dark")">@cobranza.Estado</span>
+                    </td>
+                    <td>@(cobranza.FechaPago?.ToString("d") ?? "-")</td>
+                    <td>@cobranza.Notas</td>
+                    <td class="text-end">
+                        <div class="btn-group">
+                            <a asp-controller="Cobranzas" asp-action="Edit" asp-route-id="@cobranza.IdCobranza" class="btn btn-outline-primary btn-sm">Editar</a>
+                            <a asp-controller="Cobranzas" asp-action="Details" asp-route-id="@cobranza.IdCobranza" class="btn btn-outline-secondary btn-sm">Detalle</a>
+                        </div>
+                    </td>
+                </tr>
+            }
+            </tbody>
+        </table>
+    </div>
+}

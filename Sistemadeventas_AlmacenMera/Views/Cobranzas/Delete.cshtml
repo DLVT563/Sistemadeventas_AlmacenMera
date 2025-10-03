@@ -1,0 +1,31 @@
+@model POSVentaMera.Models.Cobranza
+@{
+    ViewData["Title"] = "Eliminar Cobro";
+}
+
+<h1 class="h4 mb-4">¿Eliminar cobro?</h1>
+
+<div class="alert alert-warning">
+    Esta acción eliminará el cobro del contribuyente <strong>@Model.Contribuyente?.NombreContribuyente</strong> correspondiente al periodo <strong>@Model.Periodo.ToString("MMMM yyyy")</strong>.
+</div>
+
+<div class="card mb-4">
+    <div class="card-body">
+        <dl class="row mb-0">
+            <dt class="col-sm-3">Servicio</dt>
+            <dd class="col-sm-9">@Model.Servicio</dd>
+
+            <dt class="col-sm-3">Monto</dt>
+            <dd class="col-sm-9">@Model.Monto.ToString("C")</dd>
+
+            <dt class="col-sm-3">Estado</dt>
+            <dd class="col-sm-9">@Model.Estado</dd>
+        </dl>
+    </div>
+</div>
+
+<form asp-action="Delete" method="post" class="d-flex gap-2">
+    <input type="hidden" asp-for="IdCobranza" />
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>

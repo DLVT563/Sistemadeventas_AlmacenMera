@@ -1,0 +1,79 @@
+@model POSVentaMera.Models.Contribuyente
+<div class="row g-3">
+    <div class="col-md-3">
+        <label asp-for="Estatus" class="form-label"></label>
+        <select asp-for="Estatus" class="form-select">
+            <option value="Activo">Activo</option>
+            <option value="Inactivo">Inactivo</option>
+        </select>
+        <span asp-validation-for="Estatus" class="text-danger"></span>
+    </div>
+    <div class="col-md-3">
+        <label asp-for="Ruc" class="form-label"></label>
+        <input asp-for="Ruc" class="form-control" />
+        <span asp-validation-for="Ruc" class="text-danger"></span>
+    </div>
+    <div class="col-md-6">
+        <label asp-for="NombreContribuyente" class="form-label"></label>
+        <input asp-for="NombreContribuyente" class="form-control" />
+        <span asp-validation-for="NombreContribuyente" class="text-danger"></span>
+    </div>
+
+    <div class="col-md-4">
+        <label asp-for="PlataformaElectronica" class="form-label"></label>
+        <input asp-for="PlataformaElectronica" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="TipoContribuyente" class="form-label"></label>
+        <input asp-for="TipoContribuyente" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="RegimenTributario" class="form-label"></label>
+        <input asp-for="RegimenTributario" class="form-control" />
+    </div>
+
+    <div class="col-md-4">
+        <label asp-for="RegimenLaboral" class="form-label"></label>
+        <input asp-for="RegimenLaboral" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="IdentificadorSol" class="form-label"></label>
+        <input asp-for="IdentificadorSol" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="ClaveSol" class="form-label"></label>
+        <input asp-for="ClaveSol" class="form-control" />
+    </div>
+
+    <div class="col-md-4">
+        <label asp-for="IdentificadorAfpenet" class="form-label"></label>
+        <input asp-for="IdentificadorAfpenet" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="ClaveAfpenet" class="form-label"></label>
+        <input asp-for="ClaveAfpenet" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="IdentificadorBn" class="form-label"></label>
+        <input asp-for="IdentificadorBn" class="form-control" />
+    </div>
+
+    <div class="col-md-4">
+        <label asp-for="ClaveBn" class="form-label"></label>
+        <input asp-for="ClaveBn" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Contacto" class="form-label"></label>
+        <input asp-for="Contacto" class="form-control" />
+    </div>
+    <div class="col-md-4">
+        <label asp-for="Email" class="form-label"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="col-12">
+        <label asp-for="ObservacionesInternas" class="form-label"></label>
+        <textarea asp-for="ObservacionesInternas" class="form-control" rows="3"></textarea>
+    </div>
+</div>

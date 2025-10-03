@@ -1,0 +1,21 @@
+@model POSVentaMera.Models.Contribuyente
+@{
+    ViewData["Title"] = "Nuevo Contribuyente";
+}
+
+<h1 class="h3 mb-4">Registrar Contribuyente</h1>
+
+<form asp-action="Create" method="post" class="card shadow-sm">
+    <div class="card-body">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        @await Html.PartialAsync("_FormFields", Model)
+    </div>
+    <div class="card-footer d-flex justify-content-end gap-2">
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Guardar</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

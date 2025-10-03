@@ -21,6 +21,8 @@ namespace Sistemadeventas_AlmacenMera.Data
         public DbSet<HistorialPrecio> HistorialPrecios { get; set; }
         public DbSet<HistorialEntradasSalida> HistorialEntradasSalidas { get; set; }
         public DbSet<Almacen> Almacenes { get; set; }
+        public DbSet<Contribuyente> Contribuyentes { get; set; }
+        public DbSet<Cobranza> Cobranzas { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -75,7 +77,8 @@ namespace Sistemadeventas_AlmacenMera.Data
 
                 entity.HasData(
         new Roles { IdRol = 1, NombreRol = "Admin" },
-        new Roles { IdRol = 2, NombreRol = "Empleado" }
+        new Roles { IdRol = 2, NombreRol = "Empleado" },
+        new Roles { IdRol = 3, NombreRol = "Asesor" }
     );
             });
 
@@ -238,6 +241,47 @@ namespace Sistemadeventas_AlmacenMera.Data
                       .WithMany(p => p.HistorialEntradasSalida)
                       .HasForeignKey(h => h.IdProducto)
                       .OnDelete(DeleteBehavior.Restrict);
+            });
+
+            // Contribuyente
+            modelBuilder.Entity<Contribuyente>(entity =>
+            {
+                entity.HasKey(e => e.IdContribuyente);
+
+                entity.Property(e => e.Estatus).HasMaxLength(50).HasDefaultValue("Activo");
+                entity.Property(e => e.Ruc).HasMaxLength(20).IsRequired();
+                entity.Property(e => e.NombreContribuyente).HasMaxLength(200).IsRequired();
+                entity.Property(e => e.PlataformaElectronica).HasMaxLength(100);
+                entity.Property(e => e.TipoContribuyente).HasMaxLength(100);
+                entity.Property(e => e.RegimenTributario).HasMaxLength(150);
+                entity.Property(e => e.RegimenLaboral).HasMaxLength(150);
+                entity.Property(e => e.IdentificadorSol).HasMaxLength(100);
+                entity.Property(e => e.ClaveSol).HasMaxLength(100);
+                entity.Property(e => e.IdentificadorAfpenet).HasMaxLength(100);
+                entity.Property(e => e.ClaveAfpenet).HasMaxLength(100);
+                entity.Property(e => e.IdentificadorBn).HasMaxLength(100);
+                entity.Property(e => e.ClaveBn).HasMaxLength(100);
+                entity.Property(e => e.Contacto).HasMaxLength(200);
+                entity.Property(e => e.Email).HasMaxLength(200);
+                entity.Property(e => e.ObservacionesInternas).HasMaxLength(500);
+
+                entity.HasIndex(e => e.Ruc).IsUnique();
+            });
+
+            // Cobranza
+            modelBuilder.Entity<Cobranza>(entity =>
+            {
+                entity.HasKey(e => e.IdCobranza);
+
+                entity.Property(e => e.Servicio).HasMaxLength(200).IsRequired();
+                entity.Property(e => e.Monto).HasColumnType("decimal(18,2)");
+                entity.Property(e => e.Estado).HasMaxLength(50).HasDefaultValue("Pendiente");
+                entity.Property(e => e.Notas).HasMaxLength(500);
+
+                entity.HasOne(e => e.Contribuyente)
+                      .WithMany(c => c.Cobranzas)
+                      .HasForeignKey(e => e.IdContribuyente)
+                      .OnDelete(DeleteBehavior.Cascade);
             });
 
             // Almacen

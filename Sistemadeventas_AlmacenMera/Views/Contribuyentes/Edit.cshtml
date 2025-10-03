@@ -1,0 +1,22 @@
+@model POSVentaMera.Models.Contribuyente
+@{
+    ViewData["Title"] = "Editar Contribuyente";
+}
+
+<h1 class="h3 mb-4">Editar Contribuyente</h1>
+
+<form asp-action="Edit" method="post" class="card shadow-sm">
+    <div class="card-body">
+        <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+        <input type="hidden" asp-for="IdContribuyente" />
+        @await Html.PartialAsync("_FormFields", Model)
+    </div>
+    <div class="card-footer d-flex justify-content-end gap-2">
+        <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+        <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+    </div>
+</form>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
