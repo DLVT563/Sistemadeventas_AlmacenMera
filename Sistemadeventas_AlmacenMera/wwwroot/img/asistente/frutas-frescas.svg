@@ -1,0 +1,24 @@
+<svg width="480" height="320" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="320" rx="32" fill="#FFF7ED"/>
+  <g filter="url(#shadow)">
+    <ellipse cx="240" cy="240" rx="160" ry="40" fill="#F2D6A2"/>
+  </g>
+  <g transform="translate(80 60)">
+    <path d="M140 140c-22 12-52 6-70-14-18-20-18-49 0-69 18-20 48-26 70-14 22 12 44 58 44 58s-22 27-44 39z" fill="#FF6B6B"/>
+    <path d="M118 52c8-18 18-32 30-40 12-8 24-12 36-12 12 0 22 4 30 12 16 16 16 40 0 56-16 16-72 28-72 28s-20-26-24-44z" fill="#FFA94D"/>
+    <path d="M210 110c14-16 40-24 60-16 20 8 32 28 30 48-2 20-18 40-40 46-22 6-76-18-76-18s12-44 26-60z" fill="#4CD1A1"/>
+    <path d="M192 32c0-18 16-32 36-32 20 0 36 14 36 32 0 18-16 38-36 38s-36-20-36-38z" fill="#8BC34A"/>
+    <path d="M80 28c0-12 12-22 28-22 16 0 28 10 28 22s-12 28-28 28c-16 0-28-16-28-28z" fill="#FFD43B"/>
+    <circle cx="150" cy="146" r="12" fill="#E03131"/>
+    <circle cx="182" cy="126" r="10" fill="#099268"/>
+    <circle cx="204" cy="162" r="14" fill="#22B8CF"/>
+  </g>
+  <defs>
+    <filter id="shadow" x="60" y="180" width="360" height="120" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feFlood flood-color="#F2D6A2" flood-opacity="0.4"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+</svg>
