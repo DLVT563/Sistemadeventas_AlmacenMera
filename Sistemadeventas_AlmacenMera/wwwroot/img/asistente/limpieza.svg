@@ -1,0 +1,26 @@
+<svg width="480" height="320" viewBox="0 0 480 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="480" height="320" rx="32" fill="#F3F0FF"/>
+  <g filter="url(#shadow)">
+    <ellipse cx="240" cy="236" rx="164" ry="46" fill="#DAD6FF"/>
+  </g>
+  <g transform="translate(96 68)">
+    <rect x="32" y="96" width="88" height="108" rx="20" fill="#845EF7"/>
+    <path d="M68 16h16c8 0 14 6 14 14v54H54V30c0-8 6-14 14-14z" fill="#9775FA"/>
+    <rect x="146" y="44" width="80" height="160" rx="22" fill="#51CF66"/>
+    <rect x="162" y="64" width="48" height="96" rx="14" fill="#C0F6D1"/>
+    <rect x="242" y="72" width="92" height="132" rx="18" fill="#FFD8A8"/>
+    <rect x="258" y="92" width="60" height="76" rx="12" fill="#FFE8CC"/>
+    <path d="M280 36c0-10 10-18 22-18s22 8 22 18v30h-44V36z" fill="#FFA94D"/>
+    <path d="M150 24h72l-12 24h-48L150 24z" fill="#63E6BE"/>
+    <rect x="52" y="146" width="72" height="16" rx="8" fill="#D0BFFF" opacity="0.6"/>
+    <rect x="164" y="178" width="96" height="12" rx="6" fill="#69DB7C" opacity="0.5"/>
+  </g>
+  <defs>
+    <filter id="shadow" x="60" y="172" width="360" height="132" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feFlood flood-color="#DAD6FF" flood-opacity="0.4"/>
+      <feComposite in2="blur" operator="in"/>
+      <feComposite in="SourceGraphic"/>
+    </filter>
+  </defs>
+</svg>
